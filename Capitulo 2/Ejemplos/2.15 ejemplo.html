@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<!-- Fig. 2.15: formulario2.html -->
+
+<!-- Formulario que usa una variedad de componentes. -->
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Más formularios</title>
+<style>
+.site-nav{position:sticky;top:0;z-index:9999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0 0 20px;font-family:Arial,sans-serif}
+.site-nav a{color:white;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px}
+.site-nav a:hover{background:#1d4ed8}
+</style></head>
+
+<body>
+
+    <h1>Formulario de retroalimentación</h1>
+
+    <p>
+        Llene este formulario para ayudarnos
+        a mejorar nuestro sitio.
+    </p>
+
+    <form method="post" action="http://www.deitel.com">
+
+        <input type="hidden"
+               name="destinatario"
+               value="deitel@deitel.com">
+
+        <input type="hidden"
+               name="asunto"
+               value="Formulario de retroalimentación">
+
+        <input type="hidden"
+               name="redirigir"
+               value="principal.html">
+
+        <p>
+            <label>
+                Nombre:
+                <input name="nombre"
+                       type="text"
+                       size="25">
+            </label>
+        </p>
+
+        <!-- <textarea> crea un cuadro de texto multilinea -->
+
+        <p>
+            <label>
+                Comentarios:
+                <br>
+
+                <textarea name="comentarios"
+                          rows="4"
+                          cols="36">Escriba aquí los comentarios.</textarea>
+            </label>
+        </p>
+
+        <!-- <input type="password"> inserta un -->
+        <!-- cuadro de texto que aparece enmascarado con -->
+        <!-- caracteres de asteriscos -->
+
+        <p>
+            <label>
+                Dirección de correo electrónico:
+                <input name="email"
+                       type="password"
+                       size="25">
+            </label>
+        </p>
+
+        <strong>Cosas que le gustaron:</strong>
+        <br>
+
+        <label>
+            Diseño del sitio
+            <input name="cosasgustaron"
+                   type="checkbox"
+                   value="Diseno">
+        </label>
+
+        <label>
+            Vínculos
+            <input name="cosasgustaron"
+                   type="checkbox"
+                   value="Vinculos">
+        </label>
+
+        <label>
+            Facilidad de uso
+            <input name="cosasgustaron"
+                   type="checkbox"
+                   value="Facilidad">
+        </label>
+
+        <label>
+            Imágenes
+            <input name="cosasgustaron"
+                   type="checkbox"
+                   value="Imagenes">
+        </label>
+
+        <label>
+            Código fuente
+            <input name="cosasgustaron"
+                   type="checkbox"
+                   value="Codigo">
+        </label>
+
+        <!-- <input type="radio"> crea un botón de opción. -->
+        <!-- La diferencia entre botones de opción -->
+        <!-- y casillas de verificación es que sólo puede seleccionarse -->
+        <!-- un botón de opción en un grupo. -->
+
+        <p>
+
+            <strong>Cómo llegó a nuestro sitio:</strong>
+            <br>
+
+            <label>
+                Motor de búsqueda
+                <input name="comositio"
+                       type="radio"
+                       value="motor busqueda"
+                       checked>
+            </label>
+
+            <label>
+                Vínculos desde otro sitio
+                <input name="comositio"
+                       type="radio"
+                       value="vinculo">
+            </label>
+
+            <label>
+                Sitio Web Deitel.com
+                <input name="comositio"
+                       type="radio"
+                       value="deitel.com">
+            </label>
+
+            <label>
+                Referencia en un libro
+                <input name="comositio"
+                       type="radio"
+                       value="libro">
+            </label>
+
+            <label>
+                Otro
+                <input name="comositio"
+                       type="radio"
+                       value="otro">
+            </label>
+
+        </p>
+
+        <p>
+
+            <label>
+                Califique nuestro sitio:
+
+                <!-- la etiqueta <select> presenta una lista -->
+                <!-- desplegable con opciones indicadas por las -->
+                <!-- etiquetas <option> -->
+
+                <select name="calificacion">
+
+                    <option selected>Sorprendente</option>
+                    <option>10</option>
+                    <option>9</option>
+                    <option>8</option>
+                    <option>7</option>
+                    <option>6</option>
+                    <option>5</option>
+                    <option>4</option>
+                    <option>3</option>
+                    <option>2</option>
+                    <option>1</option>
+                    <option>Malo</option>
+
+                </select>
+
+            </label>
+
+        </p>
+
+        <p>
+
+            <input type="submit" value="Enviar">
+
+            <input type="reset" value="Borrar">
+
+        </p>
+
+    </form>
+<p>
+<a href="../ejemplos.html">Volver a ejemplos</a>
+</p>
+
+<div class="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo</a>
+  <a href="index.html">← Volver a ejemplos</a>
+</div>
+</body>
+
+</html>

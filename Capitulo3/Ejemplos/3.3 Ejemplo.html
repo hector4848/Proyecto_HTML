@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nuevos elementos section de HTML5</title>
+<style>
+.site-nav{position:sticky;top:0;z-index:9999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0 0 20px;font-family:Arial,sans-serif}
+.site-nav a{color:white;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px}
+.site-nav a:hover{background:#1d4ed8}
+</style></head>
+
+<body>
+    <header> 
+        <img src="imagenes/deitel.png" alt="Logo de Deitel" />
+        <h1>Bienvenido a Deitel Buzz Online</h1>
+
+        <!-- el elemento time inserta una fecha y/o una hora -->
+        <time>2012-01-17</time>
+    </header>
+
+    <section id="1"> 
+        <nav> 
+            <h2>Publicaciones recientes</h2>
+            <ul>
+                <li><a href="http://www.deitel.com/books/iw3htp5">
+                        Internet &amp; World Wide Web How to Program, 5/e</a></li>
+                <li><a href="http://www.deitel.com/books/androidfp/">
+                        Android for Programmers: An App-Driven Approach</a></li>
+                <li><a href="http://www.deitel.com/books/iphonefp">
+                        iPhone for Programmers: An App-Driven Approach</a></li>
+                <li><a href="http://www.deitel.com/books/jhtp9/">
+                        Java How to Program, 9/e</a></li>
+                <li><a href="http://www.deitel.com/books/cpphtp8/">
+                        C++ How to Program, 8/e</a></li>
+                <li><a href="http://www.deitel.com/books/vcsharp2010htp">
+                        Visual C# 2010 How to Program, 4/e</a></li>
+                <li><a href="http://www.deitel.com/books/vb2010htp">
+                        Visual Basic 2010 How to Program</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section id="2"> 
+        <h2>Libros de la serie Cómo programar</h2>
+        <h3><em>Java How to Program, 9/e</em></h3>
+        <figure> 
+            <img src="imagenes/halo.png" alt="Java How to Program, 9/e" />
+            <figcaption>Cubierta de <em>Java How to Program, 9/e</em>.</figcaption>
+        </figure>
+
+        <article>
+            <header>
+                <h3>De
+                    <em>
+                        <a href="http://www.deitel.com/books/jhtp9/">
+                            Java How to program, 9/e:</a>
+                    </em>
+                </h3>
+            </header>
+            <p>Características:
+            <ul>
+                <li>Extensa cobertura de los fundamentos:
+                    <mark>dos capítulos sobre instrucciones de control</mark>.
+                </li>
+                <li>Enfoque en <mark>ejemplos del mundo real</mark>.</li>
+                <li><mark>Conjunto de ejercicios Hacer la diferencia.</mark></li>
+                <li>Introducción desde los primeros capítulos a las clases,
+                    objetos, métodos y cadenas.</li>
+                <li>Manejo de excepciones integrado.</li>
+                <li>Archivos, flujos y serialización de objetos.</li>
+                <li>Secciones modulares opcionales sobre el lenguaje y
+                    características de la biblioteca de la nueva versión Java SE 7.</li>
+                <li>Otros temas: Recursividad, búsqueda, ordenamiento,
+                    colecciones genéricas, genéricos, estructuras de datos, applets,
+                    multimedia, multihilos, bases de datos/JDBC&trade;, desarrollo de
+                    aplicaciones Web, servicios Web y un caso de estudio opcional de
+                    Diseño orientado a objetos con un ATM.</li>
+            </ul>
+
+            <details>
+                <summary>Testimonios de la reciente edición</summary>
+                <ul>
+                    <li>"Se actualizó para reflejar lo último en tecnologías de Java;
+                        sus claras y detalladas explicaciones lo hacen indispensable.
+                        Los ejercicios de conciencia social [Hacer la diferencia] son algo
+                        verdaderamente nuevo y refrescante."
+                        <strong>&mdash;José Antonio González Seco, Parlamento de Andalucía</strong>
+                    </li>
+                    <li>"Otorga a los nuevos programadores el beneficio de la sabiduría
+                        derivada de muchos años de experiencia en el desarrollo de software."
+                        <strong>&mdash;Edward F. Gehringer, North Carolina State University</strong>
+                    </li>
+                    <li>"Introduce las buenas prácticas y metodologías de diseño, justo
+                        desde el principio. Un excelente punto de partida para desarrollar
+                        aplicaciones Java robustas de alta calidad."
+                        <strong>&mdash;Simon Ritter, Oracle Corporation</strong>
+                    </li>
+                    <li>"Un estilo conversacional fácil de leer. Los ejemplos de código
+                        claros impulsan a los lectores a volverse expertos en Java."
+                        <strong>&mdash;Patty Kraft, San Diego State University</strong>
+                    </li>
+                    <li>"Un excelente libro de texto con una infinidad de ejemplos de
+                        diversos dominios de aplicaciones&mdash;excelente para un curso
+                        ordinario de CS1 o CS2."
+                        <strong>&mdash;William E. Duncan, Louisiana State University</strong>
+                    </li>
+                </ul>
+            </details>
+            </p>
+        </article>
+
+        <aside>
+            Los navegadores no aplican formato al elemento aside.
+        </aside>
+
+        <h2>Libros de la serie Deitel Developer</h2>
+        <h3><em>Android for Programmers: An App-Driven Approach</em></h3>
+        Haga clic <a href="http://www.deitel.com/books/androidfp/">aquí</a>
+        para obtener más información sobre cómo pedir este libro.
+
+        <h2>Videos LiveLessons</h2>
+        <h3><em>C# 2010 Fundamentals LiveLessons</em></h3>
+        Haga clic <a href="http://www.deitel.com/Books/LiveLessons/">aquí</a>
+        para obtener más información sobre nuestros videos LiveLessons.
+    </section>
+
+    <section id="3">
+        <h2>Resultados de nuestra encuesta en Facebook</h2>
+        <p>Si usted fuera un novato que deseara aprender Java por primera vez,
+            &iquest;preferiría un curso que enseñara Java en el contexto del
+            desarrollo de aplicaciones Android? Estos son los resultados de
+            nuestra encuesta:</p>
+        0 <meter min="0" max="54" value="14"></meter> 54
+        <p>De los 54 participantes, 14 (verde) preferirían aprender Java en
+            el contexto del desarrollo de aplicaciones Android.</p>
+    </section>
+
+    <footer>
+        <h6>&copy; 1992-2012 por Deitel &amp; Associ<wbr>ates, Inc.
+            Todos los derechos reservados.</h6>
+        <address>
+            Escriba a <a href="mailto:deitel@deitel.com">deitel@deitel.com</a>
+        </address>
+    </footer>
+       <p><a href="../index.html">&#8592; Volver a selección de Ejemplos</a></p>
+
+<div class="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo</a>
+  <a href="index.html">← Volver a ejemplos</a>
+</div>
+</body>
+</html>

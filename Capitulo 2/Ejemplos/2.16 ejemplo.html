@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<!-- Fig. 2.16: interna.html -->
+
+<!-- Vinculación interna -->
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Vínculos internos</title>
+
+<style>
+.site-nav{position:sticky;top:0;z-index:9999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0 0 20px;font-family:Arial,sans-serif}
+.site-nav a{color:white;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px}
+.site-nav a:hover{background:#1d4ed8}
+</style></head>
+
+<body>
+
+    <!-- el atributo id crea un destino de hipervínculo interno -->
+
+    <h1 id="caracteristicas">
+        Las mejores características de Internet
+    </h1>
+
+    <!-- la dirección de un vínculo interno es "#id" -->
+
+    <p>
+        <a href="#insectos">
+            Ir a <em>Insectos favoritos</em>
+        </a>
+    </p>
+
+    <ul>
+
+        <li>
+            Puede conocer personas de países
+            de todo el mundo.
+        </li>
+
+        <li>
+            Tiene acceso a los medios a medida que se vuelven públicos:
+
+            <ul>
+
+                <li>Nuevos juegos</li>
+
+                <li>
+                    Nuevas aplicaciones
+
+                    <ul>
+                        <li>Por negocios</li>
+                        <li>Por placer</li>
+                    </ul>
+
+                </li>
+
+                <li>Noticias de todo el mundo</li>
+
+                <li>Motores de búsqueda</li>
+
+                <li>Compras</li>
+
+                <li>
+                    Programación
+
+                    <ul>
+                        <li>HTML5</li>
+                        <li>Java</li>
+                        <li>Dynamic HTML</li>
+                        <li>Secuencias de comandos</li>
+                        <li>Nuevos lenguajes</li>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </li>
+
+        <li>Vínculos</li>
+
+        <li>
+            Mantenerse en contacto con viejos amigos
+        </li>
+
+        <li>
+            Es la tecnología del futuro
+        </li>
+
+    </ul>
+
+    <!-- el atributo id crea un destino de hipervínculo interno -->
+
+    <h1 id="insectos">
+        Mis 3 insectos favoritos
+    </h1>
+
+    <p>
+
+        <!-- hipervínculo interno a las características -->
+
+        <a href="#caracteristicas">
+            Ir a <em>Características favoritas</em>
+        </a>
+
+    </p>
+
+    <ol>
+
+        <li>Luciérnaga</li>
+        <li>Hormiga roja</li>
+        <li>Abejorro</li>
+
+    </ol>
+<p>
+<a href="../ejemplos.html">Volver a ejemplos</a>
+</p>
+
+<div class="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo</a>
+  <a href="index.html">← Volver a ejemplos</a>
+</div>
+</body>
+
+</html>

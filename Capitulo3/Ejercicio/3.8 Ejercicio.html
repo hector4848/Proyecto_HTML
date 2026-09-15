@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Autocompletable</title>
+<style>
+.site-nav{position:sticky;top:0;z-index:9999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0 0 20px;font-family:Arial,sans-serif}
+.site-nav a{color:white;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px}
+.site-nav a:hover{background:#1d4ed8}
+</style></head>
+<body>
+
+    <h2>Días de la semana</h2>
+
+    <form>
+        <label for="dia">Selecciona un día:</label>
+
+        <input type="text" id="dia" name="dia" list="dias" autocomplete="on">
+
+        <datalist id="dias">
+            <option value="Lunes">
+            <option value="Martes">
+            <option value="Miércoles">
+            <option value="Jueves">
+            <option value="Viernes">
+            <option value="Sábado">
+            <option value="Domingo">
+        </datalist>
+
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+
+<div class="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo</a>
+  <a href="index.html">← Volver a ejercicios</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Una tabla de HTML5 simple</title>
+<style>
+.site-nav{position:sticky;top:0;z-index:9999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0 0 20px;font-family:Arial,sans-serif}
+.site-nav a{color:white;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px}
+.site-nav a:hover{background:#1d4ed8}
+</style></head>
+
+<body>
+
+<!-- la etiqueta <table> abre una tabla -->
+
+<table border="1">
+
+    <!-- la tabla (esto ayuda a las personas con discapacidad visual) -->
+
+    <caption>
+        <strong>
+            Tabla de frutas (1era columna) y sus precios (2da columna)
+        </strong>
+    </caption>
+
+    <!-- la sección <thead> aparece primero en la tabla -->
+
+    <!-- da formato al área del encabezado de la tabla -->
+
+    <thead>
+        <tr>
+            <!-- <tr> inserta una fila en la tabla -->
+
+            <th>Fruta</th>
+            <!-- inserta una celda de encabezado -->
+
+            <th>Precio</th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tr>
+            <th>Total</th>
+            <th>$3.75</th>
+        </tr>
+    </tfoot>
+
+    <tbody>
+
+        <tr>
+            <td>Manzana</td>
+            <td>$0.25</td>
+        </tr>
+
+        <tr>
+            <td>Naranja</td>
+            <td>$0.50</td>
+        </tr>
+
+        <tr>
+            <td>Plátano</td>
+            <td>$1.00</td>
+        </tr>
+
+        <tr>
+            <td>Piña</td>
+            <td>$2.00</td>
+        </tr>
+
+    </tbody>
+
+</table>
+<p>
+<a href="../ejemplos.html">Volver a ejemplos</a>
+</p>
+
+<div class="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo</a>
+  <a href="index.html">← Volver a ejemplos</a>
+</div>
+</body>
+
+</html>

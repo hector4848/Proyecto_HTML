@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formulario de registro</title>
+<style>
+.site-nav{position:sticky;top:0;z-index:9999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0 0 20px;font-family:Arial,sans-serif}
+.site-nav a{color:white;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px}
+.site-nav a:hover{background:#1d4ed8}
+</style></head>
+
+<body>
+
+<h1>Registro del sitio Web</h1>
+
+<form>
+
+    <p>
+        <label for="nombre">Primer nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+    </p>
+
+    <p>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido">
+    </p>
+
+    <p>
+        <label for="correo">Dirección de correo electrónico:</label>
+        <input type="email" id="correo" name="correo">
+    </p>
+
+    <details>
+        <summary>Encuesta opcional</summary>
+
+        <p>
+            <label for="anio">¿En qué año se encuentra en la universidad?</label>
+            <select id="anio" name="anio">
+                <option value="">Seleccione una opción</option>
+                <option value="primer">Primer año</option>
+                <option value="segundo">Segundo año</option>
+                <option value="tercer">Tercer año</option>
+                <option value="cuarto">Cuarto año</option>
+                <option value="quinto">Quinto año</option>
+            </select>
+        </p>
+
+    </details>
+
+    <p>
+        <input type="submit" value="Registrarse">
+    </p>
+
+</form>
+
+
+
+<div class="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo</a>
+  <a href="index.html">← Volver a ejercicios</a>
+</div>
+</body>
+</html>

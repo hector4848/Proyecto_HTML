@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Elementos HTML5</title>
+<style>
+.site-nav{position:sticky;top:0;z-index:9999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0 0 20px;font-family:Arial,sans-serif}
+.site-nav a{color:white;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px}
+.site-nav a:hover{background:#1d4ed8}
+</style></head>
+
+<body>
+
+
+<h1>Ejercicio 3.4</h1>
+
+<h2>a)</h2>
+<p>
+    Calificación promedio:
+    <meter min="1" max="10" value="7">7</meter>
+    7 de 10
+</p>
+
+<h2>b)</h2>
+<details>
+    <summary>Resultados de la encuesta</summary>
+    <p>
+        Se pidió a los estudiantes que calificaran los alimentos de la cafetería
+        en una escala del 1 al 10. El resultado promedio de la encuesta fue de 7.
+    </p>
+</details>
+
+<h2>c)</h2>
+<label for="nombre">Primer nombre:</label>
+<input type="text" id="nombre" name="nombre" autofocus>
+
+<h2>d)</h2>
+<input type="text" name="nombre" placeholder="Primer nombre" autofocus>
+
+<h2>e)</h2>
+<input list="estados" name="estado" placeholder="Seleccione un estado">
+
+<datalist id="estados">
+    <option value="Veracruz">
+    <option value="Puebla">
+    <option value="Oaxaca">
+    <option value="Chiapas">
+    <option value="Tabasco">
+</datalist>
+
+<h2>f)</h2>
+<input type="range" min="1" max="100">
+
+<h2>g)</h2>
+<form autocomplete="off">
+
+<h2>h)</h2>
+<p>
+    Se pidió a los estudiantes que calificaran los alimentos en la cafetería.
+    <mark>En una escala del 1 al 10. El resultado promedio fue 7.</mark>
+</p>
+
+
+
+<div class="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo</a>
+  <a href="index.html">← Volver a ejercicios</a>
+</div>
+</body>
+</html>

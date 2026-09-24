@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+<!-- Fig. 4.6: avanzada.html -->
+<!-- Herencia en hojas de estilo. -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Más estilos</title>
+
+    <style type="text/css">
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a.nodec {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1, em {
+            font-weight: bold;
+        }
+
+        ul {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        ul ul {
+            font-size: .8em;
+        }
+
+    </style>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 30px;
+}
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #0002;
+}
+.navegacion a {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+.navegacion a:hover {
+    background: #1d4ed8;
+}
+.navegacion .secundario {
+    background: #64748b;
+}
+.navegacion .secundario:hover {
+    background: #475569;
+}
+.contenido-navegacion {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+</style>
+</head>
+
+<body>
+<div class="navegacion">
+    <a class="secundario" href="index.html">☰ Ejemplos</a>
+    <a href="4.3 ejemplo.html">← Anterior</a>
+    <a href="4.8 ejemplo.html">Siguiente →</a>
+    <a class="secundario" href="../index.html">↩ Capítulo 4</a>
+    <a class="secundario" href="../../index.html">⌂ Todos los capítulos</a>
+</div>
+
+
+    <h1>Lista de compras para el lunes:</h1>
+
+    <ul>
+        <li>Leche</li>
+
+        <li>
+            Pan
+            <ul>
+                <li>Pan blanco</li>
+                <li>Pan de centeno</li>
+                <li>Pan de trigo entero</li>
+            </ul>
+        </li>
+
+        <li>Zanahoria</li>
+        <li>Yogurt</li>
+        <li>Pizza <em>con champiñones</em></li>
+    </ul>
+
+    <p>
+        <em>Ir a la</em>
+        <a class="nodec" href="http://www.deitel.com">
+            Tienda de abarrotes
+        </a>
+    </p>
+
+</body>
+</html>

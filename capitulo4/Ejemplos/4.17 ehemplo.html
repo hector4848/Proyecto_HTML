@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<!-- Fig. 4.17: desplegable.html -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Menú desplegable</title>
+
+    <style type="text/css">
+
+        /* Menú principal */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Elemento que contiene el menú */
+        li {
+            position: relative;
+            width: 120px;
+        }
+
+        /* Menú contraído */
+        li ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Al pasar el ratón sobre "Menú" */
+        li:hover ul {
+            display: block;
+        }
+
+        /* Vínculos */
+        a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            background-color: white;
+            color: black;
+        }
+
+        /* El vínculo cambia al pasar el ratón */
+        a:hover {
+            background-color: lightgray;
+        }
+
+    </style>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 30px;
+}
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #0002;
+}
+.navegacion a {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+.navegacion a:hover {
+    background: #1d4ed8;
+}
+.navegacion .secundario {
+    background: #64748b;
+}
+.navegacion .secundario:hover {
+    background: #475569;
+}
+.contenido-navegacion {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+</style>
+</head>
+
+<body>
+<div class="navegacion">
+    <a class="secundario" href="index.html">☰ Ejemplos</a>
+    <a href="4.16 ejemplo.html">← Anterior</a>
+    <a href="4.18 ejemplo.html">Siguiente →</a>
+    <a class="secundario" href="../index.html">↩ Capítulo 4</a>
+    <a class="secundario" href="../../index.html">⌂ Todos los capítulos</a>
+</div>
+
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Menú</a>
+
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Artículos</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>
+

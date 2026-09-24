@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botón de navegación</title>
+  <link rel="stylesheet" href="estilos.css">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 30px;
+}
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #0002;
+}
+.navegacion a {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+.navegacion a:hover {
+    background: #1d4ed8;
+}
+.navegacion .secundario {
+    background: #64748b;
+}
+.navegacion .secundario:hover {
+    background: #475569;
+}
+.contenido-navegacion {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<div class="navegacion">
+    <a class="secundario" href="index.html">☰ Ejercicios</a>
+    <a href="4.8 Ejercicio.html">← Anterior</a>
+    
+    <a class="secundario" href="../index.html">↩ Capítulo 4</a>
+    <a class="secundario" href="../../index.html">⌂ Todos los capítulos</a>
+</div>
+
+  <div class="boton-nav">
+    <a href="../index.html">Ir al inicio</a>
+  </div>
+</body>
+</html>

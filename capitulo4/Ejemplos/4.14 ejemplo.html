@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Bordes</title>
+
+    <style>
+        p {
+            text-align: center;
+            width: 50%;
+            position: relative;
+            left: 25%;
+        }
+
+        .thick {
+            border-width: thick;
+        }
+
+        .medium {
+            border-width: medium;
+        }
+
+        .thin {
+            border-width: thin;
+        }
+
+        .solid {
+            border-style: solid;
+        }
+
+        .double {
+            border-style: double;
+        }
+
+        .groove {
+            border-style: groove;
+        }
+
+        .ridge {
+            border-style: ridge;
+        }
+
+        .dotted {
+            border-style: dotted;
+        }
+
+        .inset {
+            border-style: inset;
+        }
+
+        .outset {
+            border-style: outset;
+        }
+
+        .dashed {
+            border-style: dashed;
+        }
+
+        .red {
+            border-color: red;
+        }
+
+        .blue {
+            border-color: blue;
+        }
+    </style>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 30px;
+}
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #0002;
+}
+.navegacion a {
+    display: inline-block;
+    padding: 10px 14px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+.navegacion a:hover {
+    background: #1d4ed8;
+}
+.navegacion .secundario {
+    background: #64748b;
+}
+.navegacion .secundario:hover {
+    background: #475569;
+}
+.contenido-navegacion {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+</style>
+</head>
+
+<body>
+<div class="navegacion">
+    <a class="secundario" href="index.html">☰ Ejemplos</a>
+    <a href="4.12 ejemplo.html">← Anterior</a>
+    <a href="4.15 ejemplo.html">Siguiente →</a>
+    <a class="secundario" href="../index.html">↩ Capítulo 4</a>
+    <a class="secundario" href="../../index.html">⌂ Todos los capítulos</a>
+</div>
+
+
+    <p class="thick solid">Borde sólido</p>
+
+    <p class="thick double">Doble borde</p>
+
+    <p class="thick groove">Borde acanalado</p>
+
+    <p class="thick ridge">Borde rugoso</p>
+
+    <p class="thick dotted">Borde punteado</p>
+
+    <p class="thick inset">Borde incrustado</p>
+
+    <p class="thick outset">Borde saliente</p>
+
+    <p class="thick dashed">Borde grueso intermitente</p>
+
+    <p class="thin solid red">Borde sólido rojo delgado</p>
+
+    <p class="medium outset blue">Borde saliente azul mediano</p>
+
+</body>
+</html>

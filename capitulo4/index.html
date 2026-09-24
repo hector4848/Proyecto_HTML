@@ -1,101 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capítulo 4</title>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4</title>
 
-body {
-    font-family: Arial, sans-serif;
-    background: #eef2f7;
-    margin: 0;
-    padding: 30px;
-}
-.navegacion {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 25px 0;
-    padding: 15px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px #0002;
-}
-.navegacion a {
-    display: inline-block;
-    padding: 10px 14px;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 7px;
-}
-.navegacion a:hover {
-    background: #1d4ed8;
-}
-.navegacion .secundario {
-    background: #64748b;
-}
-.navegacion .secundario:hover {
-    background: #475569;
-}
-.contenido-navegacion {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            margin: 0;
+            padding: 50px;
+            text-align: center;
+        }
 
-h1, h2 { text-align: center; }
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-.tarjeta {
-    background: white;
-    width: 280px;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px #0002;
-    text-align: center;
-}
-.tarjeta a {
-    display: block;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 8px;
-    margin-top: 15px;
-}
-.tarjeta a:hover { background: #1d4ed8; }
-.volver { text-align: center; margin-top: 30px; }
-</style>
+        h1 {
+            font-size: 48px;
+            margin-bottom: 35px;
+        }
+
+        .boton {
+            display: block;
+            width: 85%;
+            max-width: 620px;
+            margin: 20px auto;
+            padding: 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 12px;
+        }
+
+        .boton:hover {
+            background: #1d4ed8;
+        }
+    </style>
 </head>
+
 <body>
-<div class="contenido-navegacion">
-<h1>Capítulo 4</h1>
-<p style="text-align:center;">Ejemplos y ejercicios del capítulo 4</p>
 
-<div class="menu">
-    <div class="tarjeta">
-        <h2>Ejemplos</h2>
-        <p>Consulta los ejemplos del capítulo 4.</p>
-        <a href="Ejemplos/index.html">Ver ejemplos</a>
-    </div>
+    <h1>Capítulo 4</h1>
 
-    <div class="tarjeta">
-        <h2>Ejercicios</h2>
-        <p>Consulta los ejercicios del capítulo 4.</p>
-        <a href="Ejercicios/index.html">Ver ejercicios</a>
-    </div>
-</div>
+    <a class="boton" href="Ejemplos/index.html">
+        📘 &nbsp; Ejemplos
+    </a>
 
-<div class="volver">
-    <a href="../index.html">← Volver a todos los capítulos</a>
-</div>
-</div>
+    <a class="boton" href="Ejercicios/index.html">
+        📑 &nbsp; Ejercicios
+    </a>
+
+    <a class="boton" href="../index.html">
+        ⌂ &nbsp; Inicio
+    </a>
+
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<!-- Fig. 4.16: tiposmedios.html -->
+<!-- Tipos de medios de CSS. -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Tipos de medios</title>
+
+    <style type="text/css">
+
+        @media all
+        {
+            body {
+                background-color: SteelBlue;
+            }
+
+            h1 {
+                font-family: Verdana, Helvetica, sans-serif;
+                color: PaleGreen;
+            }
+
+            p {
+                font-size: 12pt;
+                color: white;
+                font-family: Arial, sans-serif;
+            }
+        } /* Fin de la declaración media all. */
+
+        @media print
+        {
+            body {
+                background-color: white;
+            }
+
+            h1 {
+                color: SeaGreen;
+            }
+
+            p {
+                font-size: 14pt;
+                color: SteelBlue;
+                font-family: "Times New Roman", Times, serif;
+            }
+        } /* Fin de la declaración media print. */
+
+    </style>
+
+<style>
+.navegacion-cap4 {
+    width: min(1000px, calc(100% - 30px));
+    margin: 18px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+.navegacion-cap4 a {
+    background: #2864e8;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+.navegacion-cap4 a:hover { background: #1f55c9; }
+</style>
+
+</head>
+
+<body>
+<div class="navegacion-cap4">
+    <a href="index.html">☰ Ejemplos</a>
+    <a href="4.15 ejemplo.html">← Anterior</a>
+    <a href="4.17 ehemplo.html">Siguiente →</a>
+    <a href="../index.html">← Capítulo 4</a>
+    <a href="../../index.html">⌂ Inicio</a>
+</div>
+
+
+    <h1>Ejemplo de tipos de medios de CSS</h1>
+
+    <p>
+        Este ejemplo usa tipos de medios de CSS para variar la forma en que
+        aparece la página impresa y cómo aparece en cualquier otro medio.
+        Este texto aparece con una fuente en la pantalla y con una
+        fuente distinta en papel o en vista previa de impresión. Para ver
+        la diferencia en Internet Explorer, vaya al menú Imprimir
+        y seleccione Vista previa de impresión. En Firefox, seleccione Vista
+        preliminar del menú Imprimir.
+    </p>
+
+</body>
+</html>
+

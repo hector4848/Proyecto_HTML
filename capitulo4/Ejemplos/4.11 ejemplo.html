@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Imágenes de fondo</title>
+
+  <style type="text/css">
+    body {
+      background-image: url(imagen/logo.png);
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: lightgrey;
+    }
+
+    p {
+      font-size: 18pt;
+      color: darkblue;
+      text-indent: 1em;
+      font-family: Arial, sans-serif;
+    }
+
+    .dark {
+      font-weight: bold;
+    }
+  </style>
+
+<style>
+.navegacion-cap4 {
+    width: min(1000px, calc(100% - 30px));
+    margin: 18px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+.navegacion-cap4 a {
+    background: #2864e8;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+.navegacion-cap4 a:hover { background: #1f55c9; }
+</style>
+
+</head>
+
+<body>
+<div class="navegacion-cap4">
+    <a href="index.html">☰ Ejemplos</a>
+    <a href="4.10 ejemplo.html">← Anterior</a>
+    <a href="4.12 ejemplo.html">Siguiente →</a>
+    <a href="../index.html">← Capítulo 4</a>
+    <a href="../../index.html">⌂ Inicio</a>
+</div>
+
+  <p>
+    <span class="dark">Deitel &amp; Associates, Inc.</span>
+    en la esquina inferior derecha de la página. Observe que el logo permanece en
+    la posición correcta cuando ajustamos el tamaño de la ventana del navegador.
+    El color de background-color llena los espacios donde no hay imagen.
+  </p>
+</body>
+</html>

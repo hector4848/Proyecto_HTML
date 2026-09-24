@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Regla CSS: verde-mover</title>
+  <style>
+    .verde-mover {
+      color: green;        
+      position: relative;   
+      top: 25px;            
+      left: 15px;          
+    }
+  </style>
+
+<style>
+.navegacion-cap4 {
+    width: min(1000px, calc(100% - 30px));
+    margin: 18px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+.navegacion-cap4 a {
+    background: #2864e8;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+.navegacion-cap4 a:hover { background: #1f55c9; }
+</style>
+
+</head>
+<body>
+<div class="navegacion-cap4">
+    <a href="index.html">☰ Ejercicios</a>
+    <a href="4.5 Ejercicio.html">← Anterior</a>
+    <a href="4.7 Ejercicio.html">Siguiente →</a>
+    <a href="../index.html">← Capítulo 4</a>
+    <a href="../../index.html">⌂ Inicio</a>
+</div>
+
+  <h1 class="verde-mover">Título que se mueve</h1>
+  <p>Este párrafo no tiene la clase, así que no cambia.</p>
+  <p class="verde-mover">Este párrafo sí se mueve y es verde.</p>
+  <span class="verde-mover">Un span también.</span>
+    <p><a href="../index.html">&#8592; Volver a selección de Ejercicios</a></p>
+</body>
+</html>

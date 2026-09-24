@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<!-- Fig. 4.17: desplegable.html -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Menú desplegable</title>
+
+    <style type="text/css">
+
+        /* Menú principal */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Elemento que contiene el menú */
+        li {
+            position: relative;
+            width: 120px;
+        }
+
+        /* Menú contraído */
+        li ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Al pasar el ratón sobre "Menú" */
+        li:hover ul {
+            display: block;
+        }
+
+        /* Vínculos */
+        a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            background-color: white;
+            color: black;
+        }
+
+        /* El vínculo cambia al pasar el ratón */
+        a:hover {
+            background-color: lightgray;
+        }
+
+    </style>
+
+<style>
+.navegacion-cap4 {
+    width: min(1000px, calc(100% - 30px));
+    margin: 18px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+.navegacion-cap4 a {
+    background: #2864e8;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+.navegacion-cap4 a:hover { background: #1f55c9; }
+</style>
+
+</head>
+
+<body>
+<div class="navegacion-cap4">
+    <a href="index.html">☰ Ejemplos</a>
+    <a href="4.16 ejemplo.html">← Anterior</a>
+    <a href="4.18 ejemplo.html">Siguiente →</a>
+    <a href="../index.html">← Capítulo 4</a>
+    <a href="../../index.html">⌂ Inicio</a>
+</div>
+
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Menú</a>
+
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Artículos</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>
+

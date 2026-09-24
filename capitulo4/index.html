@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo 4</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f3f6;
+    color: #111;
+}
+
+.menu-principal {
+    width: min(840px, calc(100% - 40px));
+    margin: 105px auto 60px;
+    padding: 55px 68px 67px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    text-align: center;
+}
+
+.menu-principal h1 {
+    margin: 18px 0 35px;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.boton-menu {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 22px 20px;
+    background: #2864e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 25px;
+}
+
+.boton-menu:hover { background: #1f55c9; }
+
+.encabezado-lista {
+    background: #2864e8;
+    color: white;
+    text-align: center;
+    padding: 28px 20px 34px;
+}
+
+.encabezado-lista h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+.encabezado-lista p {
+    margin: 14px 0 0;
+    font-size: 24px;
+}
+
+.grid-lista {
+    width: min(1280px, calc(100% - 50px));
+    margin: 45px auto 55px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.tarjeta {
+    min-height: 130px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 22px 15px;
+    text-decoration: none;
+    color: #111;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0,0,0,.14);
+}
+
+.tarjeta .numero {
+    color: #2864e8;
+    font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.tarjeta .descripcion {
+    font-size: 23px;
+}
+
+.navegacion {
+    width: min(900px, calc(100% - 40px));
+    margin: 25px auto 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.navegacion a {
+    background: #2864e8;
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 9px;
+    font-size: 17px;
+}
+
+.navegacion a:hover { background: #1f55c9; }
+
+@media (max-width: 950px) {
+    .grid-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    .menu-principal {
+        margin-top: 35px;
+        padding: 35px 25px 40px;
+    }
+    .menu-principal h1 { font-size: 38px; }
+    .grid-lista { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="menu-principal">
+    <h1>Capítulo 4</h1>
+
+    <a class="boton-menu" href="Ejemplos/index.html">📘 &nbsp; Ejemplos</a>
+    <a class="boton-menu" href="Ejercicios/index.html">📑 &nbsp; Ejercicios</a>
+    <a class="boton-menu" href="../index.html">⌂ &nbsp; Inicio</a>
+</div>
+</body>
+</html>

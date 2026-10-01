@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Borde de imagen</title>
+      <style type="text/css">
+         div
+         {
+            border-width: 30px;
+            border-style: solid;
+            width: 234px;
+            padding: 20px 20px;
+         }
+         #stretch
+         {
+            -webkit-border-image: url(imagenes/borde.png) 80 80 80 80 stretch;
+            -moz-border-image: url(imagenes/borde.png) 80 80 80 80 stretch;
+            -o-border-image: url(imagenes/borde.png) 80 80 80 80 stretch;
+            border-image: url(imagenes/borde.png) 80 80 80 80 stretch;
+         }
+         #repeat
+         {
+            -webkit-border-image: url(imagenes/borde.png) 34% 34% repeat;
+            -moz-border-image: url(imagenes/borde.png) 34% 34% repeat;
+            -o-border-image: url(imagenes/borde.png) 34% 34% repeat;
+            border-image: url(imagenes/borde.png) 34% 34% repeat;
+         }
+      </style>
+   <style id="site-nav-css">
+html{padding-bottom:70px}
+#site-nav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0;font-family:Arial,sans-serif;box-shadow:0 -2px 10px rgba(0,0,0,.25)}
+#site-nav a{color:#fff;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px;font-family:Arial,sans-serif;line-height:1.2}
+#site-nav a:hover{background:#1d4ed8}
+</style>
+</head>
+   <body>
+      <h2>Bordes de imagen</h2>
+      <img src="imagenes/borde.png" alt="imagen utilizada para demostrar los bordes">
+      <p><div id="stretch">Se estira el borde de la imagen</div></p>
+      <p><div id="repeat">Se repite el borde de la imagen</div></p>
+   
+<div id="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo 5</a>
+  <a href="index.html">← Volver a ejemplos</a>
+</div>
+</body>
+</html>

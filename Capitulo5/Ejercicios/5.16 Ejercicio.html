@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página multicolumna con consultas de medios</title>
+<style>
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f6fa;
+  color: #222;
+}
+h1 {
+  text-align: center;
+}
+#contenido {
+  column-count: 3;
+  column-gap: 30px;
+  column-rule: 2px solid steelblue;
+  text-align: justify;
+}
+h2 {
+  margin-top: 0;
+  color: navy;
+}
+
+/* Pantallas medianas: 2 columnas */
+@media screen and (max-width: 800px) {
+  #contenido {
+    column-count: 2;
+  }
+}
+
+/* Dispositivos móviles: 1 columna */
+@media screen and (max-width: 480px) {
+  #contenido {
+    column-count: 1;
+    column-rule: none;
+  }
+  h1 {
+    font-size: 1.4em;
+  }
+}
+</style>
+<style id="site-nav-css">
+html{padding-bottom:70px}
+#site-nav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0;font-family:Arial,sans-serif;box-shadow:0 -2px 10px rgba(0,0,0,.25)}
+#site-nav a{color:#fff;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px;font-family:Arial,sans-serif;line-height:1.2}
+#site-nav a:hover{background:#1d4ed8}
+</style>
+</head>
+<body>
+<h1>Novedades de CSS3</h1>
+<div id="contenido">
+  <h2>Sombras</h2>
+  <p>CSS3 permite agregar sombras a textos y cajas con las propiedades text-shadow y box-shadow. Con ellas se controla el desplazamiento, el desenfoque y el color de la sombra sin necesidad de imágenes.</p>
+
+  <h2>Gradientes</h2>
+  <p>Los gradientes lineales y radiales crean transiciones suaves entre dos o más colores. Se pueden usar en cualquier propiedad que acepte una imagen, como el fondo de un elemento.</p>
+
+  <h2>Animaciones</h2>
+  <p>Con la regla @keyframes se definen los estados de una animación a lo largo del tiempo. Después se aplica al elemento con propiedades como animation-name, animation-duration y animation-iteration-count.</p>
+
+  <h2>Transiciones</h2>
+  <p>Las transiciones cambian de forma gradual los valores de una propiedad cuando ocurre un evento, por ejemplo al pasar el mouse sobre un elemento. Solo se especifican el estado inicial y el final.</p>
+
+  <h2>Transformaciones</h2>
+  <p>Las transformaciones permiten mover, girar, escalar e inclinar elementos. La propiedad transform se combina muy bien con las animaciones y las transiciones.</p>
+
+  <h2>Consultas de medios</h2>
+  <p>La regla @media detecta el tipo y el tamaño del dispositivo. Si la condición es verdadera, se aplican los estilos de la regla. Así una misma página se adapta a computadoras, tabletas y teléfonos.</p>
+</div>
+
+<div id="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo 5</a>
+  <a href="index.html">← Volver a ejercicios</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejercicios de autoevaluación 5.1 – CSS3</title>
+<style>
+:root {
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --text: #1c2433;
+  --muted: #5b667a;
+  --line: #d5dcea;
+  --accent: #2456c9;
+  --answer-bg: #e3edff;
+  --answer-text: #123a96;
+}
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: Georgia, "Times New Roman", serif; line-height: 1.65;
+}
+main { max-width: 760px; margin: 0 auto; padding: 28px 18px 60px; }
+h1 { font-size: 1.7rem; margin: 0 0 4px; }
+.sub { color: var(--muted); margin: 0 0 20px; font-family: system-ui, sans-serif; font-size: .95rem; }
+.tools { display: flex; gap: 10px; margin-bottom: 22px; }
+button {
+  font-family: system-ui, sans-serif; font-size: .9rem; padding: 8px 14px;
+  border: 1px solid var(--accent); background: transparent; color: var(--accent);
+  border-radius: 8px; cursor: pointer;
+}
+button:hover { background: var(--accent); color: #fff; }
+ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+li {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 16px; display: flex; gap: 12px;
+}
+.letter { font-weight: bold; color: var(--accent); min-width: 1.4em; }
+.ans {
+  background: var(--answer-bg); color: var(--answer-text); font-weight: bold;
+  padding: 1px 8px; border-radius: 5px; font-family: "Courier New", monospace;
+  font-size: .95em; white-space: nowrap; display: inline-block; margin: 1px 0;
+}
+.hidden .ans { background: transparent; color: transparent; border-bottom: 2px solid var(--muted); border-radius: 0; user-select: none; }
+code { font-family: "Courier New", monospace; }
+</style>
+<style id="site-nav-css">
+html{padding-bottom:70px}
+#site-nav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0;font-family:Arial,sans-serif;box-shadow:0 -2px 10px rgba(0,0,0,.25)}
+#site-nav a{color:#fff;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px;font-family:Arial,sans-serif;line-height:1.2}
+#site-nav a:hover{background:#1d4ed8}
+</style>
+</head>
+<body>
+<main>
+  <h1>Ejercicios de autoevaluación 5.1</h1>
+  </div>
+  <ol id="list">
+    <li><span class="letter">a)</span><div>La propiedad <span class="ans">text-shadow</span> facilita la acción de agregar un efecto de sombra a cualquier texto.</div></li>
+    <li><span class="letter">b)</span><div>La propiedad <span class="ans">border-radius</span> nos permite agregar esquinas redondeadas a cualquier elemento.</div></li>
+    <li><span class="letter">c)</span><div>CSS3 incluye dos nuevas formas de expresar el color: <span class="ans">RGBA</span> y <span class="ans">HSLA</span>.</div></li>
+    <li><span class="letter">d)</span><div>El <span class="ans">desplazamiento horizontal</span> define el número de píxeles que aparecerá el elemento <code>box-shadow</code> a la izquierda o a la derecha de la caja.</div></li>
+    <li><span class="letter">e)</span><div>Los <span class="ans">gradientes radiales</span> son similares a los gradientes lineales, sólo que el color cambia en forma gradual desde un círculo interno (el inicio) hacia un círculo externo (el final).</div></li>
+    <li><span class="letter">f)</span><div>La propiedad <span class="ans">border-image-slice</span> divide la imagen en nueve regiones: cuatro esquinas, cuatro lados y una parte media, que es transparente a menos que se especifique lo contrario.</div></li>
+    <li><span class="letter">g)</span><div>La propiedad <code>animation-timing-function</code> determina cómo progresa la animación en un ciclo de su duración. Los posibles valores son <span class="ans">linear</span>, <span class="ans">ease</span>, <span class="ans">ease-in</span>, <span class="ans">ease-out</span>, <span class="ans">ease-in-out</span> y <span class="ans">cubic-bezier</span>.</div></li>
+    <li><span class="letter">h)</span><div>Para el elemento que se va a animar, la <span class="ans">regla @keyframes</span> define las propiedades de los elementos que cambiarán durante la animación, los valores a los que cambiarán esas propiedades y cuándo lo harán.</div></li>
+    <li><span class="letter">i)</span><div>Las <span class="ans">transiciones</span> son similares en concepto a las animaciones, pero nos permiten especificar sólo los valores iniciales y finales de las propiedades de CSS que van a cambiarse. Los cuadros clave de una animación nos permiten controlar los estados intermedios a lo largo de la duración de la animación.</div></li>
+    <li><span class="letter">j)</span><div>Las <span class="ans">transformaciones</span> de CSS3 nos permiten mover, girar, escalar e inclinar elementos.</div></li>
+    <li><span class="letter">k)</span><div>Las <span class="ans">reglas</span> consisten en uno o más selectores seguidos de un bloque de declaraciones entre llaves ({}).</div></li>
+    <li><span class="letter">l)</span><div>En CSS3 podemos usar <span class="ans">selectores</span> para aplicar estilo a los atributos con facilidad.</div></li>
+  </ol>
+</main>
+<script>
+  var list = document.getElementById('list');
+  var btn = document.getElementById('toggle');
+  btn.addEventListener('click', function () {
+    var hidden = list.classList.toggle('hidden');
+    btn.textContent = hidden ? 'Mostrar respuestas' : 'Ocultar respuestas';
+  });
+</script>
+
+<div id="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo 5</a>
+  <a href="index.html">← Volver a ejercicios</a>
+</div>
+</body>
+</html>

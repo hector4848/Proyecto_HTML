@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fusionar imágenes con CSS3</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+#galeria {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+}
+#galeria img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 3s;
+  transition-timing-function: linear;
+}
+/* La imagen 1 queda arriba y la 5 abajo */
+#img1 { z-index: 5; }
+#img2 { z-index: 4; }
+#img3 { z-index: 3; }
+#img4 { z-index: 2; }
+#img5 { z-index: 1; }
+
+/* Al pasar el mouse, cada imagen se desvanece en su turno */
+#galeria:hover #img1 { opacity: 0; transition-delay: 0s; }
+#galeria:hover #img2 { opacity: 0; transition-delay: 3s; }
+#galeria:hover #img3 { opacity: 0; transition-delay: 6s; }
+#galeria:hover #img4 { opacity: 0; transition-delay: 9s; }
+</style>
+<style id="site-nav-css">
+html{padding-bottom:70px}
+#site-nav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0;font-family:Arial,sans-serif;box-shadow:0 -2px 10px rgba(0,0,0,.25)}
+#site-nav a{color:#fff;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px;font-family:Arial,sans-serif;line-height:1.2}
+#site-nav a:hover{background:#1d4ed8}
+</style>
+</head>
+<body>
+<h1>Pasa el mouse sobre la imagen</h1>
+<div id="galeria">
+  <img id="img1" src="imagenes/kaneki.png" alt="Foto 1">
+  <img id="img2" src="imagenes/ojo.png" alt="Foto 2">
+  <img id="img3" src="imagenes/kaneki.png" alt="Foto 3">
+  <img id="img4" src="imagenes/fuego.png" alt="Foto 4">
+  <img id="img5" src="imagenes/ojo.png" alt="Foto 5">
+</div>
+
+<div id="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo 5</a>
+  <a href="index.html">← Volver a ejercicios</a>
+</div>
+</body>
+</html>

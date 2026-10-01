@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Modelo de diseño de caja flexible</title>
+<style>
+body {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  margin: 20px;
+}
+.contenedor {
+  /* Caja flexible VERTICAL (sintaxis del libro) */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  /* Sintaxis actual equivalente */
+  display: flex;
+  flex-direction: column;
+
+  width: 450px;
+  height: 900px;
+  margin: 0 auto;
+  gap: 12px;
+}
+.caja {
+  -webkit-box-flex: 1;
+  flex: 1;
+  padding: 15px;
+  background-color: #d3d3d3;
+  border: 2px solid black;
+  border-radius: 12px;
+  box-shadow: 5px 5px 8px gray;
+  overflow: hidden;
+  transition: flex 0.4s;
+}
+.caja img {
+  display: block;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.caja p {
+  margin: 0;
+  line-height: 1.4;
+}
+/* Al pasar el mouse, la caja se agranda, se oscurece y el texto se pone blanco en negrita */
+.caja:hover {
+  -webkit-box-flex: 2;
+  flex: 2;
+  background-color: #666;
+  color: white;
+  font-weight: bold;
+}
+</style>
+<style id="site-nav-css">
+html{padding-bottom:70px}
+#site-nav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0;font-family:Arial,sans-serif;box-shadow:0 -2px 10px rgba(0,0,0,.25)}
+#site-nav a{color:#fff;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px;font-family:Arial,sans-serif;line-height:1.2}
+#site-nav a:hover{background:#1d4ed8}
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+  <div class="caja">
+    <img src="imagenes/kaneki.png" alt="Kaneki">
+    <p>Las buenas prácticas de programación indican las técnicas que le ayudarán a producir programas más claros, comprensibles y fáciles de mantener.</p>
+  </div>
+
+  <div class="caja">
+    <img src="imagenes/ojo.png" alt="Ojo">
+    <p>Los tips para prevenir errores contienen sugerencias para exponer errores y eliminarlos de sus programas; muchos describen aspectos de programación que evitan que los errores entren siquiera a los programas.</p>
+  </div>
+
+  <div class="caja">
+    <img src="imagenes/fuego.png" alt="Fuego">
+    <p>Los errores comunes de programación señalan los errores que cometen los estudiantes con frecuencia. Estos errores comunes de programación reducen la probabilidad de que usted los cometa.</p>
+  </div>
+
+  <div class="caja">
+    <img src="imagenes/kaneki.png" alt="Kaneki">
+    <p>Las observaciones de ingeniería de software resaltan los asuntos de arquitectura y diseño que afectan en la construcción de sistemas de software, en especial los sistemas de gran escala.</p>
+  </div>
+</div>
+
+
+<div id="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo 5</a>
+  <a href="index.html">← Volver a ejercicios</a>
+</div>
+</body>
+</html>

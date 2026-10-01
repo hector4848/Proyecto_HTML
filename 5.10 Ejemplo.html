@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Animación</title>
+      <style type="text/css">
+         img
+         {
+            position: relative;
+            -webkit-animation: movingimage linear 10s 1s 2 alternate;
+            -moz-animation: movingimage linear 10s 1s 2 alternate;
+            animation: movingimage linear 10s 1s 2 alternate;
+         }
+         @-webkit-keyframes movingimage
+         {
+            0%   {opacity: 0; left: 50px; top: 0px;}
+            25%  {opacity: 1; left: 0px; top: 50px;}
+            50%  {opacity: 0; left: 50px; top: 100px;}
+            75%  {opacity: 1; left: 100px; top: 50px;}
+            100% {opacity: 0; left: 50px; top: 0px;}
+         }
+         @-moz-keyframes movingimage
+         {
+            0%   {opacity: 0; left: 50px; top: 0px;}
+            25%  {opacity: 1; left: 0px; top: 50px;}
+            50%  {opacity: 0; left: 50px; top: 100px;}
+            75%  {opacity: 1; left: 100px; top: 50px;}
+            100% {opacity: 0; left: 50px; top: 0px;}
+         }
+         @keyframes movingimage
+         {
+            0%   {opacity: 0; left: 50px; top: 0px;}
+            25%  {opacity: 1; left: 0px; top: 50px;}
+            50%  {opacity: 0; left: 50px; top: 100px;}
+            75%  {opacity: 1; left: 100px; top: 50px;}
+            100% {opacity: 0; left: 50px; top: 0px;}
+         }
+      </style>
+   <style id="site-nav-css">
+html{padding-bottom:70px}
+#site-nav{position:fixed;left:0;right:0;bottom:0;z-index:99999;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;background:#1f2937;padding:12px;margin:0;font-family:Arial,sans-serif;box-shadow:0 -2px 10px rgba(0,0,0,.25)}
+#site-nav a{color:#fff;background:#2563eb;text-decoration:none;padding:9px 14px;border-radius:7px;font-size:14px;font-family:Arial,sans-serif;line-height:1.2}
+#site-nav a:hover{background:#1d4ed8}
+</style>
+</head>
+   <body>
+      <img src="imagenes/lap.png" width="138" height="180"
+         alt="Portada del libro Java How to Program">
+      <div></div>
+   
+<div id="site-nav">
+  <a href="../../index.html">⌂ Inicio</a>
+  <a href="../menu.html">↑ Capítulo 5</a>
+  <a href="index.html">← Volver a ejemplos</a>
+</div>
+</body>
+</html>

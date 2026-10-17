@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.20: puntosCalidad.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.20</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  function puntosCalidad(promedio) {
+    if (promedio >= 90) { return 4; }
+    else if (promedio >= 80) { return 3; }
+    else if (promedio >= 70) { return 2; }
+    else if (promedio >= 60) { return 1; }
+    else { return 0; }
+  }
+
+  function iniciar() {
+    document.getElementById("boton").addEventListener("click", function () {
+      var promedio = parseFloat(document.getElementById("campoPromedio").value);
+      document.getElementById("resultado").innerHTML =
+        "Puntos de calidad: " + puntosCalidad(promedio);
+    }, false);
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.20 Puntos de calidad</h2>
+  <form action="#">
+    <p><label>Promedio (0 a 100): <input id="campoPromedio" type="number" step="any"></label>
+    <input id="boton" type="button" value="Calcular"></p>
+  </form>
+  <p id="resultado"></p>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

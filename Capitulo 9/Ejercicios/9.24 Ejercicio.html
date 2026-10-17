@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.24: cai2.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.24</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  var a, b;
+  var correctas = 0;
+  var incorrectas = 0;
+
+  function nuevaPregunta() {
+    a = 1 + Math.floor(Math.random() * 9);
+    b = 1 + Math.floor(Math.random() * 9);
+    document.getElementById("pregunta").innerHTML = "¿Cuánto es " + a + " por " + b + "?";
+    document.getElementById("respuesta").value = "";
+  }
+
+  function mensajeCorrecto() {
+    switch (1 + Math.floor(Math.random() * 4)) {
+      case 1: return "Muy bien.";
+      case 2: return "Excelente.";
+      case 3: return "Buen trabajo.";
+      case 4: return "Siga así.";
+    }
+  }
+
+  function mensajeIncorrecto() {
+    switch (1 + Math.floor(Math.random() * 4)) {
+      case 1: return "No. Intente de nuevo";
+      case 2: return "Equivocado. Trate una vez más.";
+      case 3: return "No se dé por vencido.";
+      case 4: return "No. Siga intentando.";
+    }
+  }
+
+  function verificar() {
+    var respuesta = parseInt(document.getElementById("respuesta").value);
+    var mensaje;
+
+    if (respuesta === a * b) {
+      correctas++;
+      mensaje = mensajeCorrecto();
+      nuevaPregunta();
+    } else {
+      incorrectas++;
+      mensaje = mensajeIncorrecto();
+      document.getElementById("respuesta").value = "";
+    }
+
+    if (correctas + incorrectas === 10) {
+      var porcentaje = correctas / 10 * 100;
+      mensaje += "<br>Respuestas correctas: " + correctas + " de 10 (" + porcentaje + "%)";
+      if (porcentaje < 75) {
+        mensaje += "<br><b>Pida ayuda adicional a su instructor</b>";
+      }
+      correctas = 0;       // se reinicia el cuestionario
+      incorrectas = 0;
+      nuevaPregunta();
+    }
+
+    document.getElementById("mensaje").innerHTML = mensaje;
+  }
+
+  function iniciar() {
+    document.getElementById("boton").addEventListener("click", verificar, false);
+    nuevaPregunta();
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.24 Monitoreo del rendimiento</h2>
+  <p id="pregunta"></p>
+  <form action="#">
+    <p><input id="respuesta" type="number">
+    <input id="boton" type="button" value="Responder"></p>
+  </form>
+  <p id="mensaje"></p>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

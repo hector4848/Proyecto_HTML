@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.17: temperaturas.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.17</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  function celsius(f) {
+    return 5.0 / 9.0 * (f - 32);
+  }
+
+  function fahrenheit(c) {
+    return 9.0 / 5.0 * c + 32;
+  }
+
+  function iniciar() {
+    document.getElementById("botonFC").addEventListener("click", function () {
+      var f = parseFloat(document.getElementById("campoTemp").value);
+      document.getElementById("resultado").innerHTML = f + " °F = " + celsius(f) + " °C";
+    }, false);
+
+    document.getElementById("botonCF").addEventListener("click", function () {
+      var c = parseFloat(document.getElementById("campoTemp").value);
+      document.getElementById("resultado").innerHTML = c + " °C = " + fahrenheit(c) + " °F";
+    }, false);
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.17 Conversión de temperaturas</h2>
+  <form action="#">
+    <p><label>Temperatura: <input id="campoTemp" type="number" step="any"></label></p>
+    <p>
+      <input id="botonFC" type="button" value="Fahrenheit a Celsius">
+      <input id="botonCF" type="button" value="Celsius a Fahrenheit">
+    </p>
+  </form>
+  <p id="resultado"></p>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.28: craps.html -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 9.28</title>
+<style>body{font-family:Arial,sans-serif;max-width:700px;margin:30px auto;padding:0 16px}</style>
+<script>
+  var saldoBanco = 1000;
+
+  function tirarDados() {
+    var d1 = 1 + Math.floor(Math.random() * 6);
+    var d2 = 1 + Math.floor(Math.random() * 6);
+    return [d1, d2];
+  }
+
+  // Selecciona al azar la cadena de conversación
+  function conversacion() {
+    switch (Math.floor(Math.random() * 4)) {
+      case 0: return "¿Así que se va a quedar en bancarrota?";
+      case 1: return "¡Vamos, arriésguese!";
+      case 2: return "¡Está teniendo éxito!";
+      case 3: return "¡Ahora es momento de cambiar sus fichas!";
+    }
+  }
+
+  function jugar() {
+    var apuesta = parseFloat(document.getElementById("apuesta").value);
+    var salida = document.getElementById("salida");
+
+    // Se pide la apuesta de nuevo hasta que sea válida
+    if (isNaN(apuesta) || apuesta <= 0 || apuesta > saldoBanco) {
+      salida.innerHTML = "Apuesta no válida. Debe ser mayor que 0 y menor o igual que su saldo ($" +
+                         saldoBanco + "). Introduzca otra apuesta.";
+      return;
+    }
+
+    var texto = "";
+    var dados = tirarDados();
+    var suma = dados[0] + dados[1];
+    var gana;
+
+    texto += "Tiró " + dados[0] + " + " + dados[1] + " = " + suma + "<br>";
+
+    if (suma === 7 || suma === 11) {
+      gana = true;
+    } else if (suma === 2 || suma === 3 || suma === 12) {
+      gana = false;
+    } else {
+      var punto = suma;
+      texto += "Su punto es " + punto + "<br>";
+      while (true) {
+        dados = tirarDados();
+        suma = dados[0] + dados[1];
+        texto += "Tiró " + dados[0] + " + " + dados[1] + " = " + suma + "<br>";
+        if (suma === punto) { gana = true; break; }
+        if (suma === 7) { gana = false; break; }
+      }
+    }
+
+    if (gana) {
+      saldoBanco += apuesta;
+      texto += "<b>El jugador gana.</b><br>";
+    } else {
+      saldoBanco -= apuesta;
+      texto += "<b>El jugador pierde.</b><br>";
+    }
+
+    texto += "Nuevo saldo: $" + saldoBanco + "<br>";
+
+    if (saldoBanco === 0) {
+      texto += "<b>Lo siento. ¡Está en bancarrota!</b>";
+      document.getElementById("botonJugar").disabled = true;
+    } else {
+      texto += conversacion();
+    }
+
+    salida.innerHTML = texto;
+  }
+
+  function iniciar() {
+    document.getElementById("botonJugar").addEventListener("click", jugar, false);
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <h2>9.28 Craps con apuestas</h2>
+  <p>Saldo inicial: $1000</p>
+  <form action="#">
+    <p><label>Apuesta: <input id="apuesta" type="number" step="any"></label>
+    <input id="botonJugar" type="button" value="Jugar"></p>
+  </form>
+  <div id="salida"></div>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

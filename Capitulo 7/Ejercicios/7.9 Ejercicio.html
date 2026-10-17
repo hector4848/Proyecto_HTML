@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Ejercicio 7.9: identificar y corregir errores</title>
+   <style>
+      body {
+         font-family: Georgia, "Times New Roman", serif;
+         max-width: 42rem;
+         margin: 2rem auto;
+         padding: 0 1rem;
+         line-height: 1.7;
+         color: #1d2430;
+         background: #fdfdfb;
+      }
+      h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+      p.intro { margin-top: 0; }
+      code, pre {
+         font-family: Consolas, "Courier New", monospace;
+         font-weight: bold;
+         color: #0b5c8a;
+      }
+      pre { margin: 0.5rem 0; }
+      li { margin-bottom: 1.75rem; }
+   </style>
+</head>
+<body>
+   <h1>7.9</h1>
+   <p class="intro">
+      Identifique y corrija los errores en cada uno de los siguientes
+      segmentos de código. [Nota: puede haber más de un error en cada
+      fragmento; a menos que haya declaraciones presentes, suponga que todas
+      las variables están declaradas e inicializadas correctamente].
+   </p>
+
+   <ol type="a">
+      <li>
+<pre>if ( edad &gt;= 65 );
+   document.writeln( "Edad es mayor o igual que 65" );
+else
+   document.writeln( "Edad es menor que 65 )";</pre>
+         <strong>Error 1:</strong> el <code>;</code> después del paréntesis
+         derecho de la condición del <code>if</code>. Deja el <code>if</code>
+         con una instrucción vacía, por lo que el <code>else</code> queda sin
+         su <code>if</code> y se produce un error de sintaxis.<br>
+         <strong>Error 2:</strong> en el <code>else</code>, las comillas y el
+         paréntesis están mal colocados.<br>
+         <strong>Corrección:</strong> quitar el punto y coma y cerrar la cadena
+         antes del paréntesis.
+<pre>if ( edad &gt;= 65 )
+   document.writeln( "Edad es mayor o igual que 65" );
+else
+   document.writeln( "Edad es menor que 65" );</pre>
+      </li>
+
+      <li>
+<pre>var x = 1, total;
+
+while ( x &lt;= 10 )
+{
+   total += x;
+   ++x;
+}</pre>
+         <strong>Error:</strong> la variable <code>total</code> no se
+         inicializó. Su valor es <code>undefined</code>, así que el resultado
+         de la suma sería <code>NaN</code>.<br>
+         <strong>Corrección:</strong> inicializar <code>total</code> en 0.
+<pre>var x = 1, total = 0;
+
+while ( x &lt;= 10 )
+{
+   total += x;
+   ++x;
+}</pre>
+      </li>
+
+      <li>
+<pre>var x = 1;
+var total = 0;
+
+while ( x &lt;= 100 )
+   total += x;
+   ++x;</pre>
+         <strong>Error:</strong> faltan las llaves que encierran el cuerpo del
+         <code>while</code>. Sin ellas, solo <code>total += x;</code> forma
+         parte del ciclo, y <code>++x;</code> queda fuera. Como <code>x</code>
+         nunca cambia dentro del ciclo, se crea un ciclo infinito.<br>
+         <strong>Corrección:</strong> encerrar ambas instrucciones entre
+         llaves.
+<pre>var x = 1;
+var total = 0;
+
+while ( x &lt;= 100 )
+{
+   total += x;
+   ++x;
+}</pre>
+      </li>
+
+      <li>
+<pre>var y = 5;
+
+while ( y &gt; 0 )
+{
+   document.writeln( y );
+   ++y;
+}</pre>
+         <strong>Error:</strong> se usa el operador de incremento
+         (<code>++y</code>) en lugar del de decremento. Como <code>y</code>
+         empieza en 5 y solo aumenta, la condición <code>y &gt; 0</code> nunca
+         se vuelve falsa y se crea un ciclo infinito.<br>
+         <strong>Corrección:</strong> usar <code>--y</code>.
+<pre>var y = 5;
+
+while ( y &gt; 0 )
+{
+   document.writeln( y );
+   --y;
+}</pre>
+      </li>
+   </ol>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Misterio</title>
+    <style>
+        td {
+            border: 1px solid #999;
+            padding: 4px 8px
+        }
+
+        table {
+            border-collapse: collapse
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.5
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 8.5 - ¿Qué hace el programa?</h1>
+    <p>El programa crea con JavaScript una <b>tabla HTML de 10 filas por 5 columnas</b>.</p>
+    <ul>
+        <li>El <code>for</code> exterior (<code>i</code> de 1 a 10) escribe cada fila: abre <code>&lt;tr&gt;</code> y al
+            final la cierra con <code>&lt;/tr&gt;</code>.</li>
+        <li>El <code>for</code> interior (<code>j</code> de 1 a 5) escribe las cinco celdas <code>&lt;td&gt;</code> de
+            esa fila.</li>
+        <li>Cada celda muestra sus coordenadas con el formato <code>(fila, columna)</code>, es decir
+            <code>(i, j)</code>: de <code>(1, 1)</code> en la primera celda a <code>(10, 5)</code> en la última.</li>
+    </ul>
+    <p>Resultado al ejecutarlo:</p>
+    <script>
+        document.writeln("<table>");
+
+        for (var i = 1; i <= 10; i++) {
+            document.writeln("<tr>");
+
+            for (var j = 1; j <= 5; j++)
+                document.writeln("<td>(" + i + ", " + j + ")</td>");
+
+            document.writeln("</tr>");
+        } // fin de for
+
+        document.writeln("</table>");
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+
+</html>

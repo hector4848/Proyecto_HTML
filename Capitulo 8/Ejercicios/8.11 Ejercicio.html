@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.11 - Ventas de la semana</title>
+    <script>
+        var numeroProducto, cantidad, precio;
+        var totalVentas = 0;
+
+        // primera lectura; -1 es el valor centinela que termina el ciclo
+        numeroProducto = parseInt(window.prompt("Introduzca el número del producto (1-5) o -1 para terminar:", "1"));
+
+        while (numeroProducto != -1) {
+            switch (numeroProducto) {
+                case 1:
+                    precio = 2.98;
+                    break;
+                case 2:
+                    precio = 4.50;
+                    break;
+                case 3:
+                    precio = 9.98;
+                    break;
+                case 4:
+                    precio = 4.49;
+                    break;
+                case 5:
+                    precio = 6.87;
+                    break;
+                default:
+                    precio = 0;
+                    window.alert("Número de producto no válido: " + numeroProducto);
+            }
+
+            if (precio != 0) {
+                cantidad = parseInt(window.prompt("Introduzca la cantidad vendida del producto " + numeroProducto + ":", "0"));
+                totalVentas += precio * cantidad;
+            }
+
+            numeroProducto = parseInt(window.prompt("Introduzca el número del producto (1-5) o -1 para terminar:", "1"));
+        }
+
+        document.writeln("<h1>Ventas de la semana pasada</h1>");
+        document.writeln("<p>Valor total de venta de todos los productos: $" + totalVentas.toFixed(2) + "</p>");
+    </script>
+</head>
+
+<body>
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+
+</html>

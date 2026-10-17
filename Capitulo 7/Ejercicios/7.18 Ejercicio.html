@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Ejercicio 7.18: secuencia de comandos misteriosa</title>
+   <style>
+      body {
+         font-family: Georgia, "Times New Roman", serif;
+         max-width: 42rem;
+         margin: 2rem auto;
+         padding: 0 1rem;
+         line-height: 1.7;
+         color: #1d2430;
+         background: #fdfdfb;
+      }
+      h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+      p.intro { margin-top: 0; }
+      code, pre {
+         font-family: Consolas, "Courier New", monospace;
+         font-weight: bold;
+         color: #0b5c8a;
+      }
+      pre { margin: 0.5rem 0; }
+   </style>
+</head>
+<body>
+   <h1>7.18</h1>
+   <p class="intro">
+      Sin ejecutar la siguiente secuencia de comandos, determine lo que
+      imprime:
+   </p>
+
+<pre>var fila = 10;
+var columna;
+
+while ( fila &gt;= 1 )
+{
+   columna = 1;
+   document.writeln( "&lt;p&gt;" );
+
+   while ( columna &lt;= 10 )
+   {
+      document.write( fila % 2 == 1 ? "&lt;" : "&gt;" );
+      ++columna;
+   } // fin de while
+
+   --fila;
+   document.writeln( "&lt;/p&gt;" );
+} // fin de while</pre>
+
+   <p>
+      La secuencia de comandos imprime 10 renglones (uno por cada valor de
+      <code>fila</code>, de 10 a 1), con 10 símbolos cada uno. Los renglones
+      alternan entre <code>&gt;</code> y <code>&lt;</code>, empezando con
+      <code>&gt;</code>:
+   </p>
+
+<pre>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</pre>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

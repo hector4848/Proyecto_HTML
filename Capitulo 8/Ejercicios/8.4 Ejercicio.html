@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.4 - Encuentre el error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+            line-height: 1.5
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto
+        }
+
+        code {
+            background: #f4f4f4
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 8.4 - Encuentre el error</h1>
+
+    <h3>a) <code>For ( x = 100, x &gt;= 1, ++x ) document.writeln( x );</code></h3>
+    <p><b>Errores:</b></p>
+    <ul>
+        <li><code>For</code> está en mayúscula; JavaScript distingue mayúsculas y minúsculas, debe ser <code>for</code>.
+        </li>
+        <li>Las expresiones del encabezado se separan con punto y coma (<code>;</code>), no con comas.</li>
+        <li><code>++x</code> incrementa el contador, pero la condición <code>x &gt;= 1</code> espera que vaya bajando
+            desde 100; el ciclo sería infinito. Hay que usar <code>--x</code>.</li>
+    </ul>
+    <p><b>Corrección:</b></p>
+    <pre>for ( x = 100; x &gt;= 1; --x )
+   document.writeln( x );</pre>
+
+    <h3>b) <code>switch ( valor % 2 )</code></h3>
+    <p><b>Error:</b> falta <code>break</code> en el <code>case 0</code>. Con un entero par se imprimiría "Entero par" y
+        la ejecución continuaría en el <code>case 1</code>, imprimiendo también "Entero impar".</p>
+    <p><b>Corrección:</b></p>
+    <pre>switch ( valor % 2 )
+{
+   case 0:
+      document.writeln( "Entero par" );
+      break;
+   case 1:
+      document.writeln( "Entero impar" );
+      break;
+}</pre>
+
+    <h3>c) <code>for ( x = 19; x &gt;= 1; x += 2 )</code></h3>
+    <p><b>Error:</b> <code>x += 2</code> aumenta el contador, así que nunca llega a ser menor que 1 y el ciclo es
+        infinito. Para ir de 19 a 1 de dos en dos se debe restar.</p>
+    <p><b>Corrección:</b></p>
+    <pre>for ( x = 19; x &gt;= 1; x -= 2 )
+   document.writeln( x );</pre>
+
+    <h3>d) Enteros pares del 2 al 100 con do...while</h3>
+    <p><b>Errores:</b></p>
+    <ul>
+        <li><code>While</code> está en mayúscula; debe ser <code>while</code>.</li>
+        <li>La condición <code>contador &lt; 100</code> termina el ciclo antes de imprimir el 100; debe ser
+            <code>contador &lt;= 100</code>.</li>
+    </ul>
+    <p><b>Corrección:</b></p>
+    <pre>contador = 2;
+do {
+   document.writeln( contador );
+   contador += 2;
+} while ( contador &lt;= 100 );</pre>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+
+</html>

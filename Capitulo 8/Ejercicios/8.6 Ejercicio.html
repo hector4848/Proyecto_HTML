@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.6 - Menor de varios enteros</title>
+    <script>
+        var cantidad, cuenta, valorCadena, valor, menor;
+
+        // el primer valor leído indica cuántos enteros se introducirán
+        cantidad = parseInt(window.prompt("¿Cuántos valores va a introducir?", "3"));
+
+        if (cantidad >= 1) {
+            for (cuenta = 1; cuenta <= cantidad; cuenta++) {
+                valorCadena = window.prompt("Introduzca el entero no negativo " + cuenta + " de " + cantidad, "0");
+                valor = parseInt(valorCadena);
+
+                if (cuenta == 1)
+                    menor = valor;
+                else if (valor < menor)
+                    menor = valor;
+            }
+
+            document.writeln("<h1>El menor de los valores es " + menor + "</h1>");
+        }
+        else
+            document.writeln("<h1>La cantidad de valores debe ser al menos 1</h1>");
+    </script>
+</head>
+
+<body>
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+
+</html>

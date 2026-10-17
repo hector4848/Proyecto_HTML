@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.20 - Menor y mayor de cinco enteros</title>
+    <script>
+        var v1, v2, v3, v4, v5;
+        var n1, n2, n3, n4, n5, menor, mayor;
+
+        v1 = window.prompt("Introduzca el primer entero", "0");
+        v2 = window.prompt("Introduzca el segundo entero", "0");
+        v3 = window.prompt("Introduzca el tercer entero", "0");
+        v4 = window.prompt("Introduzca el cuarto entero", "0");
+        v5 = window.prompt("Introduzca el quinto entero", "0");
+
+        n1 = parseInt(v1);
+        n2 = parseInt(v2);
+        n3 = parseInt(v3);
+        n4 = parseInt(v4);
+        n5 = parseInt(v5);
+
+        menor = n1;
+        mayor = n1;
+
+        if (n2 < menor)
+            menor = n2;
+        if (n3 < menor)
+            menor = n3;
+        if (n4 < menor)
+            menor = n4;
+        if (n5 < menor)
+            menor = n5;
+
+        if (n2 > mayor)
+            mayor = n2;
+        if (n3 > mayor)
+            mayor = n3;
+        if (n4 > mayor)
+            mayor = n4;
+        if (n5 > mayor)
+            mayor = n5;
+
+        document.writeln("<h1>Resultados</h1>");
+        document.writeln("<p>El entero menor es " + menor + "</p>");
+        document.writeln("<p>El entero mayor es " + mayor + "</p>");
+    </script>
+</head>
+
+<body>
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Los dos números mayores</title>
+   <script>
+
+
+      var contador = 2;   // cuenta cuántos números se han introducido
+      var numero;         // el entero más reciente introducido por el usuario
+      var primero;        // primer número introducido
+      var segundo;        // segundo número introducido
+      var mayor;          // el número más grande encontrado hasta ahora
+      var segundoMayor;   // el segundo más grande encontrado hasta ahora
+
+      // pedir los dos primeros números y ordenarlos
+      primero = parseInt(
+         window.prompt( "Escriba el número 1:", "0" ) );
+      segundo = parseInt(
+         window.prompt( "Escriba el número 2:", "0" ) );
+
+      if ( primero > segundo )
+      {
+         mayor = primero;
+         segundoMayor = segundo;
+      }
+      else
+      {
+         mayor = segundo;
+         segundoMayor = primero;
+      }
+
+      // procesar los 8 números restantes
+      while ( contador < 10 )
+      {
+         contador = contador + 1;
+
+         numero = parseInt(
+            window.prompt( "Escriba el número " + contador + ":", "0" ) );
+
+         if ( numero > mayor )
+         {
+            segundoMayor = mayor; // el mayor anterior pasa a ser el segundo
+            mayor = numero;
+         }
+         else if ( numero > segundoMayor )
+            segundoMayor = numero;
+      } // fin de while
+
+      document.writeln( "<h1>Los dos números más grandes</h1>" );
+      document.writeln( "<p>El mayor es " + mayor + "</p>" );
+      document.writeln( "<p>El segundo mayor es " + segundoMayor + "</p>" );
+
+   </script>
+</head>
+<body>
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

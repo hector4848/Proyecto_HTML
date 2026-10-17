@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Palíndromo de cinco dígitos</title>
+   <script>
+
+
+      var numero;   // número introducido por el usuario
+      var digito1;  // dígito de las decenas de millar
+      var digito2;  // dígito de los millares
+      var digito4;  // dígito de las decenas
+      var digito5;  // dígito de las unidades
+
+      numero = parseInt(
+         window.prompt( "Escriba un entero de cinco dígitos:", "0" ) );
+
+      // repetir hasta que el número tenga exactamente cinco dígitos
+      while ( !( numero >= 10000 && numero <= 99999 ) )
+      {
+         window.alert( "El número debe tener exactamente cinco dígitos. " +
+            "Inténtelo de nuevo." );
+
+         numero = parseInt(
+            window.prompt( "Escriba un entero de cinco dígitos:", "0" ) );
+      } // fin de while
+
+      // separar los dígitos que se necesitan comparar
+      digito1 = Math.floor( numero / 10000 );
+      digito2 = Math.floor( numero / 1000 ) % 10;
+      digito4 = Math.floor( numero / 10 ) % 10;
+      digito5 = numero % 10;
+
+      if ( digito1 == digito5 && digito2 == digito4 )
+         document.writeln( "<h1>" + numero + " es un palíndromo</h1>" );
+      else
+         document.writeln( "<h1>" + numero + " no es un palíndromo</h1>" );
+
+   </script>
+</head>
+<body>
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

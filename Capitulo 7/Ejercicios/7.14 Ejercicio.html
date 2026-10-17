@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 7.14: ej07_14.html -->
+<!-- Sueldo bruto de tres empleados con horas extra. -->
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Sueldo bruto de empleados</title>
+   <script>
+
+      /* PSEUDOCÓDIGO (refinamiento arriba-abajo)
+
+         Primer nivel:
+            Determinar el sueldo bruto de tres empleados
+
+         Segundo nivel:
+            Inicializar el contador de empleados en 1
+            Procesar los tres empleados
+            Terminar el programa
+
+         Tercer nivel:
+            Mientras el contador de empleados sea menor o igual que 3
+               Pedir las horas trabajadas
+               Pedir la tarifa por hora
+               Si las horas son menores o iguales que 40
+                  sueldo = horas * tarifa
+               Si no
+                  sueldo = 40 * tarifa + ( horas - 40 ) * tarifa * 1.5
+               Mostrar el sueldo bruto
+               Sumar 1 al contador de empleados
+      */
+
+      var empleado = 1; // contador de empleados
+      var horas;        // horas trabajadas la semana pasada
+      var tarifa;       // tarifa por hora
+      var sueldo;       // sueldo bruto
+
+      document.writeln( "<h1>Sueldo bruto de empleados</h1>" );
+
+      while ( empleado <= 3 )
+      {
+         horas = parseFloat(
+            window.prompt( "Empleado " + empleado + ": horas trabajadas", "0" ) );
+         tarifa = parseFloat(
+            window.prompt( "Empleado " + empleado + ": tarifa por hora", "0" ) );
+
+         if ( horas <= 40 )
+            sueldo = horas * tarifa;
+         else
+            sueldo = 40 * tarifa + ( horas - 40 ) * tarifa * 1.5;
+
+         document.writeln( "<p>Empleado " + empleado + ": " + horas +
+            " horas a $" + tarifa.toFixed( 2 ) + " por hora = <strong>$" +
+            sueldo.toFixed( 2 ) + "</strong></p>" );
+
+         empleado = empleado + 1;
+      } // fin de while
+
+   </script>
+</head>
+<body>
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

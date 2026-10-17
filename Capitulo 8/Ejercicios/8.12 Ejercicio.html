@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.12 - ¿Qué imprime cada instrucción?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+            line-height: 1.5
+        }
+
+        code {
+            background: #f4f4f4
+        }
+
+        table {
+            border-collapse: collapse
+        }
+
+        td,
+        th {
+            border: 1px solid #999;
+            padding: 4px 10px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 8.12 - ¿Qué imprime cada instrucción?</h1>
+    <p>Valores: <code>i = 1</code>, <code>j = 2</code>, <code>k = 3</code>, <code>m = 2</code>.</p>
+    <ol type="a">
+        <li><code>i == 1</code> → <b>true</b>. Los paréntesis no son necesarios.</li>
+        <li><code>j == 3</code> → <b>false</b>. No son necesarios.</li>
+        <li><code>i &gt;= 1 &amp;&amp; j &lt; 4</code> → <code>true &amp;&amp; true</code> → <b>true</b>. No son
+            necesarios.</li>
+        <li><code>m &lt;= 99 &amp;&amp; k &lt; m</code> → <code>true &amp;&amp; false</code> → <b>false</b>. No son
+            necesarios.</li>
+        <li><code>j &gt;= i || k == m</code> → <code>true || false</code> → <b>true</b>. No son necesarios.</li>
+        <li><code>k + m &lt; j || 3 - j &gt;= k</code> → <code>5 &lt; 2</code> es false y <code>1 &gt;= 3</code> es
+            false → <b>false</b>. No son necesarios, porque la aritmética tiene mayor precedencia que la comparación, y
+            esta que <code>||</code>.</li>
+        <li><code>!( k &gt; m )</code> → <code>!( true )</code> → <b>false</b>. Aquí <b>sí</b> son necesarios: sin
+            ellos, <code>!k &gt; m</code> aplicaría <code>!</code> solo a <code>k</code>, dando una expresión distinta.
+        </li>
+    </ol>
+    <h3>Comprobación en JavaScript</h3>
+    <script>
+        var i = 1, j = 2, k = 3, m = 2;
+        document.writeln("<table><tr><th>Inciso</th><th>Resultado</th></tr>");
+        document.writeln("<tr><td>a</td><td>" + (i == 1) + "</td></tr>");
+        document.writeln("<tr><td>b</td><td>" + (j == 3) + "</td></tr>");
+        document.writeln("<tr><td>c</td><td>" + (i >= 1 && j < 4) + "</td></tr>");
+        document.writeln("<tr><td>d</td><td>" + (m <= 99 && k < m) + "</td></tr>");
+        document.writeln("<tr><td>e</td><td>" + (j >= i || k == m) + "</td></tr>");
+        document.writeln("<tr><td>f</td><td>" + (k + m < j || 3 - j >= k) + "</td></tr>");
+        document.writeln("<tr><td>g</td><td>" + (!(k > m)) + "</td></tr></table>");
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 7.13: ej07_13.html -->
+<!-- Ingresos semanales de un vendedor a comisión. -->
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Comisiones de un vendedor</title>
+   <script>
+
+      var ventasBrutas = 0; // total vendido en la semana
+      var articulo;         // número de artículo (1 a 4)
+      var cantidad;         // unidades vendidas del artículo
+      var valor;            // valor de una unidad del artículo
+      var ingresos;         // $200 + 9% de las ventas brutas
+
+      document.writeln( "<h1>Ingresos del vendedor</h1>" );
+
+      articulo = parseInt(
+         window.prompt( "Número de artículo vendido (1-4, -1 para terminar):", "1" ) );
+
+      while ( articulo != -1 )
+      {
+         cantidad = parseInt(
+            window.prompt( "Cantidad vendida del artículo " + articulo + ":", "1" ) );
+
+         valor = 0;
+
+         if ( articulo == 1 )
+            valor = 239.99;
+         else if ( articulo == 2 )
+            valor = 129.75;
+         else if ( articulo == 3 )
+            valor = 99.95;
+         else if ( articulo == 4 )
+            valor = 350.89;
+         else
+            document.writeln( "<p>El artículo " + articulo +
+               " no existe y se ignoró</p>" );
+
+         ventasBrutas = ventasBrutas + valor * cantidad;
+
+         articulo = parseInt(
+            window.prompt( "Número de artículo vendido (1-4, -1 para terminar):", "1" ) );
+      } // fin de while
+
+      ingresos = 200 + 0.09 * ventasBrutas;
+
+      document.writeln( "<p>Ventas brutas: $" + ventasBrutas.toFixed( 2 ) + "</p>" );
+      document.writeln( "<h2>Ingresos del vendedor: $" +
+         ingresos.toFixed( 2 ) + "</h2>" );
+
+   </script>
+</head>
+<body>
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

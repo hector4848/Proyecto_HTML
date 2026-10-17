@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.10 - Los Doce Días de Navidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.5;
+        }
+    </style>
+    <script>
+        var dia;
+
+        document.writeln("<h1>Los Doce Días de Navidad</h1>");
+
+        for (dia = 1; dia <= 12; dia++) {
+            document.write("<p>En el ");
+
+            switch (dia) {
+                case 1: document.write("primer"); break;
+                case 2: document.write("segundo"); break;
+                case 3: document.write("tercer"); break;
+                case 4: document.write("cuarto"); break;
+                case 5: document.write("quinto"); break;
+                case 6: document.write("sexto"); break;
+                case 7: document.write("séptimo"); break;
+                case 8: document.write("octavo"); break;
+                case 9: document.write("noveno"); break;
+                case 10: document.write("décimo"); break;
+                case 11: document.write("undécimo"); break;
+                case 12: document.write("duodécimo"); break;
+            }
+
+            document.write(" día de Navidad<br>mi amor verdadero me regaló:<br>");
+
+            // sin break a propósito: cada caso continúa con el siguiente
+            switch (dia) {
+                case 12:
+                    document.write("Doce tamborileros tocando el tambor,<br>");
+                case 11:
+                    document.write("Once gaiteros tocando la gaita,<br>");
+                case 10:
+                    document.write("Diez señores saltando,<br>");
+                case 9:
+                    document.write("Nueve damas bailando,<br>");
+                case 8:
+                    document.write("Ocho criadas ordeñando,<br>");
+                case 7:
+                    document.write("Siete cisnes nadando,<br>");
+                case 6:
+                    document.write("Seis gansos poniendo huevos,<br>");
+                case 5:
+                    document.write("Cinco anillos de oro,<br>");
+                case 4:
+                    document.write("Cuatro pájaros cantores,<br>");
+                case 3:
+                    document.write("Tres gallinas francesas,<br>");
+                case 2:
+                    document.write("Dos tórtolas,<br>");
+                case 1:
+                    if (dia == 1)
+                        document.write("Una perdiz en un peral.");
+                    else
+                        document.write("Y una perdiz en un peral.");
+            }
+
+            document.writeln("</p>");
+        }
+    </script>
+</head>
+
+<body>
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8.2 - Instrucciones de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+            line-height: 1.5
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 8.2 - Instrucciones de JavaScript</h1>
+
+    <h3>a) Suma de los enteros impares del 1 al 99 (for)</h3>
+    <pre>suma = 0;
+for ( cuenta = 1; cuenta &lt;= 99; cuenta += 2 )
+   suma += cuenta;</pre>
+    <script>
+        var suma, cuenta;
+        suma = 0;
+        for (cuenta = 1; cuenta <= 99; cuenta += 2)
+            suma += cuenta;
+        document.writeln("<p><b>Resultado:</b> " + suma + "</p>");
+    </script>
+
+    <h3>b) 2.5 elevado a la potencia de 3</h3>
+    <pre>resultado = Math.pow( 2.5, 3 );</pre>
+    <script>
+        var resultado = Math.pow(2.5, 3);
+        document.writeln("<p><b>Resultado:</b> " + resultado + "</p>");
+    </script>
+
+    <h3>c) Enteros del 1 al 20 con while, cinco por línea</h3>
+    <pre>x = 1;
+document.write( "&lt;p&gt;" );
+while ( x &lt;= 20 )
+{
+   document.write( x + " " );
+   if ( x % 5 == 0 &amp;&amp; x &lt; 20 )
+      document.write( "&lt;/p&gt;&lt;p&gt;" );
+   x++;
+}
+document.write( "&lt;/p&gt;" );</pre>
+    <script>
+        var x;
+        x = 1;
+        document.write("<p>");
+        while (x <= 20) {
+            document.write(x + " ");
+            if (x % 5 == 0 && x < 20)
+                document.write("</p><p>");
+            x++;
+        }
+        document.write("</p>");
+    </script>
+
+    <h3>d) Lo mismo con for</h3>
+    <pre>document.write( "&lt;p&gt;" );
+for ( x = 1; x &lt;= 20; x++ )
+{
+   document.write( x + " " );
+   if ( x % 5 == 0 &amp;&amp; x &lt; 20 )
+      document.write( "&lt;/p&gt;&lt;p&gt;" );
+}
+document.write( "&lt;/p&gt;" );</pre>
+    <script>
+        document.write("<p>");
+        for (x = 1; x <= 20; x++) {
+            document.write(x + " ");
+            if (x % 5 == 0 && x < 20)
+                document.write("</p><p>");
+        }
+        document.write("</p>");
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+
+</html>

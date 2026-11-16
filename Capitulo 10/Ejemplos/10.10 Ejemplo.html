@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Tirar dados</title>
+   <style>
+      body { font-family: sans-serif; }
+      img { width: 60px; height: 60px; margin: 4px; }
+      table { border-collapse: collapse; margin-top: 15px; }
+      th, td { border: 1px solid #888; padding: 4px 12px; text-align: center; }
+   </style>
+</head>
+<body>
+   <h1>Tirar 12 dados</h1>
+   <div id="dados">
+      <img id="dado1" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado2" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado3" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado4" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado5" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado6" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado7" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado8" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado9" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado10" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado11" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+      <img id="dado12" src="imagenes/dado1.png" alt="dado con 1 punto(s)">
+   </div>
+   <p><input id="botonTirar" type="button" value="Tirar dados"></p>
+   <div id="divTablaFrecuencias"></div>
+
+   <script>
+      var frecuencia = [ , 0, 0, 0, 0, 0, 0 ];
+      var totalDados = 0;
+      var imagenesDado = new Array(12);
+
+      function iniciar()
+      {
+         var boton = document.getElementById( "botonTirar" );
+         boton.addEventListener( "click", tirarDados, false );
+         var longitud = imagenesDado.length;
+
+         for ( var i = 0; i < longitud; ++i )
+         {
+            imagenesDado[ i ] = document.getElementById( "dado" + (i + 1) );
+         }
+      }
+
+      function tirarDados()
+      {
+         var cara;
+         var longitud = imagenesDado.length;
+
+         for ( var i = 0; i < longitud; ++i )
+         {
+            cara = Math.floor( 1 + Math.random() * 6 );
+            calcularTiros( cara );
+            establecerImagen( i, cara );
+            ++totalDados;
+         }
+
+         actualizarTablaFrecuencias();
+      }
+
+      function calcularTiros( cara )
+      {
+         ++frecuencia[ cara ];
+      }
+
+      function establecerImagen( numeroDado, cara )
+      {
+         imagenesDado[ numeroDado ].setAttribute( "src", "imagenes/dado" + cara + ".png" );
+         imagenesDado[ numeroDado ].setAttribute( "alt", "dado con " + cara + " punto(s)" );
+      }
+
+      function actualizarTablaFrecuencias()
+      {
+         var resultados = "<table><caption>Frecuencias de tiro de dado</caption>" +
+            "<thead><th>Cara</th><th>Frecuencia</th>" +
+            "<th>Porcentaje</th></thead><tbody>";
+         var longitud = frecuencia.length;
+
+         for ( var i = 1; i < longitud; ++i )
+         {
+            resultados += "<tr><td>" + i + "</td><td>" + frecuencia[ i ] + "</td><td>" +
+               formatoPorciento( frecuencia[ i ] / totalDados ) + "</td></tr>";
+         }
+
+         resultados += "</tbody></table>";
+         document.getElementById( "divTablaFrecuencias" ).innerHTML = resultados;
+      }
+
+      function formatoPorciento( valor )
+      {
+         valor *= 100;
+         return valor.toFixed(2);
+      }
+
+      window.addEventListener( "load", iniciar, false );
+   </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejemplos</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

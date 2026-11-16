@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 11.7 -->
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Ejercicio 11.7</title>
+   <style>
+      body { font-family: Arial, sans-serif; max-width: 820px; margin: 20px auto; padding: 0 16px; line-height: 1.5; }
+      .enunciado { background: #f4f4f4; border-left: 4px solid #888; padding: 8px 14px; }
+      textarea { width: 100%; box-sizing: border-box; font-family: monospace; }
+      input[type="text"], input[type="number"], input[type="date"] { padding: 4px; margin: 2px 0; }
+      button, input[type="button"] { padding: 5px 12px; margin: 2px 0; cursor: pointer; }
+      .resultado { background: #eef6ee; padding: 6px 12px; margin-top: 8px; }
+      li { margin-bottom: 6px; }
+      b.resp { color: #0a5; }
+   </style>
+</head>
+<body>
+   <h1>Ejercicio 11.7</h1>
+   <div class="enunciado">Escriba una secuencia de comandos que utilice la generación de números aleatorios para crear enunciados con cuatro arreglos (<code>articulo</code>, <code>sustantivo</code>, <code>verbo</code>, <code>preposicion</code>) en el orden: articulo, sustantivo, verbo, preposición, articulo y sustantivo. Cada enunciado empieza con mayúscula y termina con punto. Genere 20 enunciados y muéstrelos en un <code>textarea</code>; la historia empieza con "Había una vez..." y termina con "FIN".</div>
+   <p><input type="button" id="btnGenerar" value="Generar otra historia"></p>
+   <textarea id="salida" rows="26" readonly></textarea>
+   <script>
+var articulo = ["el", "un", "algún", "ningún"];
+var sustantivo = ["niño", "niña", "perro", "ciudad", "auto"];
+var verbo = ["manejó", "saltó", "corrió", "caminó", "omitió"];
+var preposicion = ["a", "desde", "encima de", "debajo de", "sobre"];
+
+function elegir(arreglo) { return arreglo[Math.floor(Math.random() * arreglo.length)]; }
+
+function enunciado() {
+   var e = elegir(articulo);
+   e += " " + elegir(sustantivo);
+   e += " " + elegir(verbo);
+   e += " " + elegir(preposicion);
+   e += " " + elegir(articulo);
+   e += " " + elegir(sustantivo);
+   return e.charAt(0).toUpperCase() + e.slice(1) + ".";
+}
+function generar() {
+   var historia = "Había una vez...\n";
+   for (var i = 0; i < 20; ++i) historia += enunciado() + "\n";
+   historia += "FIN";
+   document.getElementById("salida").value = historia;
+}
+window.addEventListener("load", function () {
+   document.getElementById("btnGenerar").addEventListener("click", generar, false);
+   generar();
+}, false);
+   </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

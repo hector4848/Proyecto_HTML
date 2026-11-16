@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.16</title>
+</head>
+<body>
+    <h1>10.16 La criba de Eratóstenes</h1>
+    <p>Números primos entre 1 y 999:</p>
+    <pre id="salida"></pre>
+
+    <script>
+        // a) Arreglo de 1000 elementos, todos inicializados en 1 (true)
+        var primos = new Array( 1000 );
+
+        for ( var i = 0; i < primos.length; ++i )
+        {
+            primos[ i ] = 1;
+        }
+
+        // b) 0 y 1 no son primos
+        primos[ 0 ] = 0;
+        primos[ 1 ] = 0;
+
+        // Desde el índice 2, si el elemento vale 1, poner en 0 todos sus múltiplos
+        for ( var i = 2; i < primos.length; ++i )
+        {
+            if ( primos[ i ] == 1 )
+            {
+                for ( var j = i + i; j < primos.length; j += i )
+                {
+                    primos[ j ] = 0;
+                }
+            }
+        }
+
+        // Los índices que siguen valiendo 1 son los números primos
+        var lista = "";
+        var cantidad = 0;
+
+        for ( var i = 1; i < primos.length; ++i )   // se ignora el elemento 0
+        {
+            if ( primos[ i ] == 1 )
+            {
+                lista += i + " ";
+                ++cantidad;
+
+                if ( cantidad % 15 == 0 )
+                {
+                    lista += "\n";
+                }
+            }
+        }
+
+        document.getElementById( "salida" ).textContent =
+            lista + "\n\nTotal de primos encontrados: " + cantidad;
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

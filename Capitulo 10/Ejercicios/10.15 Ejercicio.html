@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.15</title>
+</head>
+<body>
+    <h1>10.15 Gráficos de tortuga</h1>
+
+    <label for="programa">Programa:</label>
+    <select id="programa">
+        <option value="cuadrado">Cuadrado de 12 x 12</option>
+        <option value="escalera">Escalera</option>
+        <option value="cruz">Cruz (usa el comando 8)</option>
+    </select>
+    <button onclick="ejecutar()">Ejecutar</button>
+
+    <pre id="salida"></pre>
+
+    <script>
+        // Programas de tortuga
+        var programas = {
+            cuadrado: [ 2, 5, 12, 3, 5, 12, 3, 5, 12, 3, 5, 12, 1, 6, 9 ],
+            escalera: [ 2, 5, 3, 3, 5, 3, 4, 5, 3, 3, 5, 3, 4,
+                        5, 3, 3, 5, 3, 4, 5, 3, 3, 5, 3, 1, 6, 9 ],
+            cruz:     [ 1, 8, 10, 2, 3, 2, 5, 15, 1, 8, 3, 9, 4, 2, 5, 15, 1, 6, 9 ]
+        };
+
+        function crearPiso()
+        {
+            var piso = new Array( 20 );
+
+            for ( var f = 0; f < 20; ++f )
+            {
+                piso[ f ] = new Array( 20 );
+
+                for ( var c = 0; c < 20; ++c )
+                {
+                    piso[ f ][ c ] = 0;
+                }
+            }
+
+            return piso;
+        }
+
+        function imprimirPiso( piso )
+        {
+            var texto = "";
+
+            for ( var f = 0; f < 20; ++f )
+            {
+                for ( var c = 0; c < 20; ++c )
+                {
+                    texto += piso[ f ][ c ] == 1 ? "*" : " ";
+                }
+
+                texto += "|\n";
+            }
+
+            return texto + "--------------------+\n";
+        }
+
+        function ejecutar()
+        {
+            var comandos = programas[ document.getElementById( "programa" ).value ];
+            var salida = "";
+            var piso = crearPiso();
+
+            // Estado de la tortuga: siempre empieza en (0, 0) con la pluma arriba
+            var x = 0;                 // columna
+            var y = 0;                 // fila
+            var direccion = 0;         // 0 = derecha, 1 = abajo, 2 = izquierda, 3 = arriba
+            var plumaAbajo = false;
+
+            var dx = [ 1, 0, -1, 0 ];
+            var dy = [ 0, 1, 0, -1 ];
+
+            var i = 0;
+
+            while ( comandos[ i ] != 9 )      // 9 = centinela, fin de datos
+            {
+                switch ( comandos[ i ] )
+                {
+                    case 1:                    // pluma arriba
+                        plumaAbajo = false;
+                        break;
+
+                    case 2:                    // pluma abajo
+                        plumaAbajo = true;
+                        piso[ y ][ x ] = 1;
+                        break;
+
+                    case 3:                    // girar a la derecha
+                        direccion = ( direccion + 1 ) % 4;
+                        break;
+
+                    case 4:                    // girar a la izquierda
+                        direccion = ( direccion + 3 ) % 4;
+                        break;
+
+                    case 5:                    // avanzar n espacios (el número sigue al 5)
+                        ++i;
+                        var espacios = comandos[ i ];
+
+                        for ( var paso = 0; paso < espacios; ++paso )
+                        {
+                            var nx = x + dx[ direccion ];
+                            var ny = y + dy[ direccion ];
+
+                            // No salirse del piso de 20 x 20
+                            if ( nx < 0 || nx > 19 || ny < 0 || ny > 19 )
+                            {
+                                break;
+                            }
+
+                            x = nx;
+                            y = ny;
+
+                            if ( plumaAbajo )
+                            {
+                                piso[ y ][ x ] = 1;
+                            }
+                        }
+
+                        break;
+
+                    case 6:                    // imprimir el arreglo de 20 x 20
+                        salida += imprimirPiso( piso );
+                        break;
+
+                    case 7:                    // (nuevo) limpiar el piso
+                        piso = crearPiso();
+                        break;
+
+                    case 8:                    // (nuevo) ir a la posición x, y sin dibujar
+                        x = comandos[ i + 1 ];
+                        y = comandos[ i + 2 ];
+                        i += 2;
+                        break;
+                }
+
+                ++i;
+            }
+
+            document.getElementById( "salida" ).textContent = salida;
+        }
+
+        ejecutar();
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

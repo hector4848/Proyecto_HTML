@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.3</title>
+</head>
+<body>
+    <h1>10.3 Instrucciones con el arreglo fracciones</h1>
+    <pre id="salida"></pre>
+
+    <script>
+        var salida = document.getElementById( "salida" );
+
+        // a) Declarar un arreglo con 10 elementos inicializados en 0
+        var fracciones = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
+        salida.textContent += "a) " + fracciones + "\n";
+
+        // b) Hacer referencia al elemento 3
+        salida.textContent += "b) fracciones[3] = " + fracciones[ 3 ] + "\n";
+
+        // c) Hacer referencia al elemento 4
+        salida.textContent += "c) fracciones[4] = " + fracciones[ 4 ] + "\n";
+
+        // d) Asignar 1.667 al elemento 9
+        fracciones[ 9 ] = 1.667;
+
+        // e) Asignar 3.333 al elemento de menor numeración (índice 0)
+        fracciones[ 0 ] = 3.333;
+
+        salida.textContent += "d) y e) " + fracciones + "\n";
+
+        // f) Sumar todos los elementos con for...in
+        var total = 0;
+
+        for ( var x in fracciones )
+        {
+            total += fracciones[ x ];
+        }
+
+        salida.textContent += "f) total = " + total + "\n";
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 11.19 -->
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Ejercicio 11.19</title>
+   <style>
+      body { font-family: Arial, sans-serif; max-width: 820px; margin: 20px auto; padding: 0 16px; line-height: 1.5; }
+      .enunciado { background: #f4f4f4; border-left: 4px solid #888; padding: 8px 14px; }
+      textarea { width: 100%; box-sizing: border-box; font-family: monospace; }
+      input[type="text"], input[type="number"], input[type="date"] { padding: 4px; margin: 2px 0; }
+      button, input[type="button"] { padding: 5px 12px; margin: 2px 0; cursor: pointer; }
+      .resultado { background: #eef6ee; padding: 6px 12px; margin-top: 8px; }
+      li { margin-bottom: 6px; }
+      b.resp { color: #0a5; }
+   </style>
+</head>
+<body>
+   <h1>Ejercicio 11.19</h1>
+   <div class="enunciado">Escriba su propia versión del método <code>String indexOf</code> y úselo en una secuencia de comandos.</div>
+   <form action="#">
+      <p>Cadena: <input type="text" id="cadena" value="abcdefghijklmnopqrstuvwxyzabcdefghijklm" size="45"></p>
+      <p>Subcadena a buscar: <input type="text" id="subcadena" value="def"></p>
+      <p>Desde el índice (opcional): <input type="number" id="desde" min="0"></p>
+      <p><input type="button" id="btnBuscar" value="Buscar"></p>
+   </form>
+   <div id="resultados"></div>
+   <script>
+// Versión propia de String.indexOf
+function miIndexOf(cadena, sub, desde) {
+   if (desde === undefined || isNaN(desde) || desde < 0) desde = 0;
+   if (sub.length === 0) return Math.min(desde, cadena.length);
+   for (var i = desde; i <= cadena.length - sub.length; ++i) {
+      var j = 0;
+      while (j < sub.length && cadena.charAt(i + j) === sub.charAt(j)) ++j;
+      if (j === sub.length) return i;
+   }
+   return -1;
+}
+function buscar() {
+   var cadena = document.getElementById("cadena").value;
+   var sub = document.getElementById("subcadena").value;
+   var d = document.getElementById("desde").value;
+   var desde = d === "" ? undefined : parseInt(d, 10);
+   var r = document.getElementById("resultados");
+   r.innerHTML = '<div class="resultado"></div>';
+   r.firstChild.textContent = "miIndexOf: " + miIndexOf(cadena, sub, desde) +
+      "   |   indexOf nativo: " + (desde === undefined ? cadena.indexOf(sub) : cadena.indexOf(sub, desde));
+}
+window.addEventListener("load", function () {
+   document.getElementById("btnBuscar").addEventListener("click", buscar, false);
+}, false);
+   </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

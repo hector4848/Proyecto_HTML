@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.12</title>
+</head>
+<body>
+    <h1>10.12 Números sin duplicados</h1>
+
+    <form onsubmit="recibir(); return false;">
+        <label for="numero">Número entre 10 y 100:</label>
+        <input id="numero" type="number" min="10" max="100" step="1" required>
+        <input id="boton" type="submit" value="Enviar">
+    </form>
+
+    <p id="estado">Números recibidos: 0 de 10</p>
+    <pre id="salida"></pre>
+
+    <script>
+        // Arreglo más pequeño posible: 10 elementos (peor caso, los 10 números diferentes)
+        var unicos = new Array( 10 );
+        var cantidadUnicos = 0;   // cuántos números distintos se han guardado
+        var recibidos = 0;        // cuántos números se han ingresado en total
+
+        function recibir()
+        {
+            var numero = parseInt( document.getElementById( "numero" ).value );
+
+            if ( isNaN( numero ) || numero < 10 || numero > 100 )
+            {
+                alert( "El número debe estar entre 10 y 100." );
+                return;
+            }
+
+            ++recibidos;
+
+            // Buscar si ya se había recibido
+            var duplicado = false;
+
+            for ( var i = 0; i < cantidadUnicos; ++i )
+            {
+                if ( unicos[ i ] == numero )
+                {
+                    duplicado = true;
+                    break;
+                }
+            }
+
+            var salida = document.getElementById( "salida" );
+
+            if ( duplicado )
+            {
+                salida.textContent += numero + " -> duplicado, no se imprime\n";
+            }
+            else
+            {
+                unicos[ cantidadUnicos ] = numero;
+                ++cantidadUnicos;
+                salida.textContent += numero + " -> nuevo, se imprime\n";
+            }
+
+            document.getElementById( "numero" ).value = "";
+            document.getElementById( "estado" ).textContent =
+                "Números recibidos: " + recibidos + " de 10";
+
+            if ( recibidos == 10 )
+            {
+                document.getElementById( "boton" ).disabled = true;
+                document.getElementById( "numero" ).disabled = true;
+                document.getElementById( "estado" ).textContent += " (completo)";
+            }
+        }
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

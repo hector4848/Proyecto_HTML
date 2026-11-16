@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 11.14 -->
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Ejercicio 11.14</title>
+   <style>
+      body { font-family: Arial, sans-serif; max-width: 820px; margin: 20px auto; padding: 0 16px; line-height: 1.5; }
+      .enunciado { background: #f4f4f4; border-left: 4px solid #888; padding: 8px 14px; }
+      textarea { width: 100%; box-sizing: border-box; font-family: monospace; }
+      input[type="text"], input[type="number"], input[type="date"] { padding: 4px; margin: 2px 0; }
+      button, input[type="button"] { padding: 5px 12px; margin: 2px 0; cursor: pointer; }
+      .resultado { background: #eef6ee; padding: 6px 12px; margin-top: 8px; }
+      li { margin-bottom: 6px; }
+      b.resp { color: #0a5; }
+   </style>
+</head>
+<body>
+   <h1>Ejercicio 11.14</h1>
+   <div class="enunciado">Con base en el programa del ejercicio 11.13, reciba varias líneas de texto y utilice <code>String indexOf</code> para determinar el número total de ocurrencias de cada letra del alfabeto. Mayúsculas y minúsculas cuentan como una sola. Almacene los totales en un arreglo e imprímalos en formato tabular en un <code>textarea</code>.</div>
+   <form action="#">
+      <p>Texto (varias líneas):</p>
+      <textarea id="texto" rows="6"></textarea>
+      <p><input type="button" id="btnContar" value="Contar letras"></p>
+   </form>
+   <textarea id="salida" rows="16" readonly></textarea>
+   <script>
+function contarLetras() {
+   var texto = document.getElementById("texto").value.toLowerCase()
+      .replace(/á/g, "a").replace(/é/g, "e").replace(/í/g, "i")
+      .replace(/ó/g, "o").replace(/[úü]/g, "u");
+   var alfabeto = "abcdefghijklmnñopqrstuvwxyz";
+   var totales = [];
+   for (var i = 0; i < alfabeto.length; ++i) {
+      var total = 0;
+      var pos = texto.indexOf(alfabeto.charAt(i));
+      while (pos !== -1) {
+         ++total;
+         pos = texto.indexOf(alfabeto.charAt(i), pos + 1);
+      }
+      totales[i] = total;
+   }
+   var t = "Letra   Total\n-----   -----\n";
+   for (var j = 0; j < alfabeto.length; ++j) {
+      t += "  " + alfabeto.charAt(j) + "     " + totales[j] + "\n";
+   }
+   document.getElementById("salida").value = t;
+}
+window.addEventListener("load", function () {
+   document.getElementById("btnContar").addEventListener("click", contarLetras, false);
+}, false);
+   </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

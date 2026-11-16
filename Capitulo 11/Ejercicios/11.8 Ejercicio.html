@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 11.8 -->
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>Ejercicio 11.8</title>
+   <style>
+      body { font-family: Arial, sans-serif; max-width: 820px; margin: 20px auto; padding: 0 16px; line-height: 1.5; }
+      .enunciado { background: #f4f4f4; border-left: 4px solid #888; padding: 8px 14px; }
+      textarea { width: 100%; box-sizing: border-box; font-family: monospace; }
+      input[type="text"], input[type="number"], input[type="date"] { padding: 4px; margin: 2px 0; }
+      button, input[type="button"] { padding: 5px 12px; margin: 2px 0; cursor: pointer; }
+      .resultado { background: #eef6ee; padding: 6px 12px; margin-top: 8px; }
+      li { margin-bottom: 6px; }
+      b.resp { color: #0a5; }
+   </style>
+</head>
+<body>
+   <h1>Ejercicio 11.8</h1>
+   <div class="enunciado"><i>(Quintillas)</i> Una quintilla es un verso humorístico de cinco líneas en el cual la primera y segunda línea riman con la quinta, y la tercera línea rima con la cuarta. Escriba una secuencia de comandos que produzca quintillas al azar.</div>
+   <p><input type="button" id="btnGenerar" value="Generar quintillas"></p>
+   <textarea id="salida" rows="24" readonly></textarea>
+   <script>
+var sujetos = ["gato", "payaso", "pirata", "abuelo", "dragón", "cartero", "pintor"];
+// rima A: -ar (líneas 1, 2 y 5)  |  rima B: -ón (líneas 3 y 4)
+var rimaA = ["bailar", "cantar", "saltar", "charlar", "pasear", "soñar", "nadar", "volar"];
+var rimaB = ["balcón", "melón", "salón", "camión", "jabón", "corazón", "bastón"];
+var inicioA1 = ["Un # que una tarde quiso", "Había un # que soñaba con", "Cierto # muy dado a"];
+var inicioA2 = ["Se puso sin dudar a", "Y una noche le dio por", "Dejó su casa para"];
+var inicioB  = ["Se escondió detrás de un", "Lo encontraron dentro de un", "Y se comió con gran pasión un", "Guardó su sombrero en el"];
+var inicioA5 = ["Y todo el pueblo lo vio", "Y así acabó la historia sin dejar de", "Y fue feliz sin parar de"];
+
+function elegir(a) { return a[Math.floor(Math.random() * a.length)]; }
+function sacar(a) { return a.splice(Math.floor(Math.random() * a.length), 1)[0]; }
+
+function quintilla() {
+   var A = rimaA.slice(), B = rimaB.slice();
+   var l1 = elegir(inicioA1).replace("#", elegir(sujetos)) + " " + sacar(A);
+   var l2 = elegir(inicioA2) + " " + sacar(A);
+   var l3 = elegir(inicioB) + " " + sacar(B);
+   var l4 = elegir(inicioB) + " " + sacar(B);
+   var l5 = elegir(inicioA5) + " " + sacar(A);
+   return [l1, l2, l3, l4, l5].join("\n");
+}
+function generar() {
+   var t = "";
+   for (var i = 1; i <= 5; ++i) t += quintilla() + "\n\n";
+   document.getElementById("salida").value = t;
+}
+window.addEventListener("load", function () {
+   document.getElementById("btnGenerar").addEventListener("click", generar, false);
+   generar();
+}, false);
+   </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

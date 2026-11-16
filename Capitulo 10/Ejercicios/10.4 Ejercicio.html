@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.4</title>
+</head>
+<body>
+    <h1>10.4 Arreglo bidimensional tabla</h1>
+    <pre id="salida"></pre>
+
+    <script>
+        var salida = document.getElementById( "salida" );
+
+        // a) Declarar y crear el arreglo con tres filas y tres columnas
+        var tabla = new Array( new Array( 3 ), new Array( 3 ),
+                               new Array( 3 ) );
+
+        // b) Almacenar el número total de elementos
+        var totalElementos = tabla.length * tabla[ 0 ].length;
+        salida.textContent += "b) totalElementos = " + totalElementos + "\n\n";
+
+        // c) Inicializar cada elemento con la suma de sus índices de fila y columna
+        for ( var x in tabla )
+        {
+            for ( var y in tabla[ x ] )
+            {
+                // for...in devuelve los índices como cadenas,
+                // por eso se convierten a número antes de sumar
+                tabla[ x ][ y ] = Number( x ) + Number( y );
+            }
+        }
+
+        salida.textContent += "c) Contenido de la tabla:\n";
+        for ( var fila = 0; fila < tabla.length; ++fila )
+        {
+            salida.textContent += tabla[ fila ].join( "  " ) + "\n";
+        }
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

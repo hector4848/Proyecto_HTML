@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.14</title>
+    <style>
+        table { border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #555; padding: 4px 10px; text-align: center; }
+        th { background: #ddd; }
+    </style>
+</head>
+<body>
+    <h1>10.14 Tiro de dos dados (36,000 tiros)</h1>
+    <div id="resultado"></div>
+
+    <script>
+        var TIROS = 36000;
+
+        // Arreglo bidimensional 7x7: se usan los índices 1 a 6 para cada dado
+        var frecuencias = new Array( 7 );
+
+        for ( var i = 0; i < 7; ++i )
+        {
+            frecuencias[ i ] = new Array( 7 );
+
+            for ( var j = 0; j < 7; ++j )
+            {
+                frecuencias[ i ][ j ] = 0;
+            }
+        }
+
+        // Tirar los dados 36,000 veces
+        for ( var tiro = 1; tiro <= TIROS; ++tiro )
+        {
+            var dado1 = Math.floor( 1 + Math.random() * 6 );
+            var dado2 = Math.floor( 1 + Math.random() * 6 );
+
+            ++frecuencias[ dado1 ][ dado2 ];
+        }
+
+        // Arreglo con las veces que apareció cada suma (2 a 12)
+        var totales = new Array( 13 );
+
+        for ( var s = 0; s < 13; ++s )
+        {
+            totales[ s ] = 0;
+        }
+
+        for ( var d1 = 1; d1 <= 6; ++d1 )
+        {
+            for ( var d2 = 1; d2 <= 6; ++d2 )
+            {
+                totales[ d1 + d2 ] += frecuencias[ d1 ][ d2 ];
+            }
+        }
+
+        var html = "";
+
+        // Tabla 1: las 36 combinaciones posibles (Figura 10.22) con su suma
+        html += "<h2>Las 36 combinaciones posibles (suma de los dados)</h2>";
+        html += "<table><tr><th>Dado 1 \\ Dado 2</th>";
+
+        for ( var c = 1; c <= 6; ++c )
+        {
+            html += "<th>" + c + "</th>";
+        }
+
+        html += "</tr>";
+
+        for ( var f = 1; f <= 6; ++f )
+        {
+            html += "<tr><th>" + f + "</th>";
+
+            for ( var c = 1; c <= 6; ++c )
+            {
+                html += "<td>" + ( f + c ) + "</td>";
+            }
+
+            html += "</tr>";
+        }
+
+        html += "</table>";
+
+        // Tabla 2: veces que salió cada combinación en los 36,000 tiros
+        html += "<h2>Veces que salió cada combinación</h2>";
+        html += "<table><tr><th>Dado 1 \\ Dado 2</th>";
+
+        for ( var c = 1; c <= 6; ++c )
+        {
+            html += "<th>" + c + "</th>";
+        }
+
+        html += "</tr>";
+
+        for ( var f = 1; f <= 6; ++f )
+        {
+            html += "<tr><th>" + f + "</th>";
+
+            for ( var c = 1; c <= 6; ++c )
+            {
+                html += "<td>" + frecuencias[ f ][ c ] + "</td>";
+            }
+
+            html += "</tr>";
+        }
+
+        html += "</table>";
+
+        // Tabla 3: resultados por suma y verificación de razonabilidad
+        html += "<h2>Resultados por suma</h2>";
+        html += "<table><tr><th>Suma</th><th>Formas de obtenerla</th>" +
+                "<th>Veces que salió</th><th>Veces esperadas</th>" +
+                "<th>Porcentaje real</th><th>Porcentaje esperado</th>" +
+                "<th>¿Razonable?</th></tr>";
+
+        for ( var suma = 2; suma <= 12; ++suma )
+        {
+            var formas = 6 - Math.abs( suma - 7 );
+            var esperado = formas / 36 * TIROS;
+            var porcentajeReal = totales[ suma ] / TIROS * 100;
+            var porcentajeEsperado = formas / 36 * 100;
+
+            // Razonable si está a menos de 10% del valor esperado
+            var diferencia = Math.abs( totales[ suma ] - esperado ) / esperado;
+            var razonable = diferencia < 0.10 ? "Sí" : "No";
+
+            html += "<tr><td>" + suma + "</td><td>" + formas + " de 36</td><td>" +
+                    totales[ suma ] + "</td><td>" + esperado.toFixed( 0 ) + "</td><td>" +
+                    porcentajeReal.toFixed( 2 ) + "%</td><td>" +
+                    porcentajeEsperado.toFixed( 2 ) + "%</td><td>" + razonable + "</td></tr>";
+        }
+
+        html += "</table>";
+        html += "<p>El 7 debe salir cerca de 1/6 (16.67%) de los tiros, y tanto el 2 " +
+                "como el 12 cerca de 1/36 (2.78%) cada uno.</p>";
+
+        document.getElementById( "resultado" ).innerHTML = html;
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

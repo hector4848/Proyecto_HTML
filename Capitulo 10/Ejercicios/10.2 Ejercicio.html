@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10.2</title>
+</head>
+<body>
+    <h1>10.2 Verdadero o falso</h1>
+    <ol type="a">
+        <li>
+            Un arreglo puede almacenar muchos tipos diferentes de valores.<br>
+            <strong>Verdadero.</strong>
+        </li>
+        <li>
+            Por lo general el índice de un arreglo debe ser un valor de punto flotante.<br>
+            <strong>Falso.</strong> El índice debe ser un entero o una expresión entera.
+        </li>
+        <li>
+            Un elemento individual de un arreglo que se pasa a una función y se modifica en ésta
+            debe contener el valor modificado cuando la función invocada complete su ejecución.<br>
+            <strong>Falso.</strong> Los elementos individuales de un tipo de dato primitivo se pasan
+            por valor. Si se pasa una referencia a un arreglo, entonces los cambios a los elementos
+            del arreglo sí se reflejan en el arreglo original. Además, un elemento de tipo objeto
+            se pasa por referencia, y los cambios en el objeto se reflejan en el arreglo original.
+        </li>
+    </ol>
+
+    <h2>Demostración del inciso c)</h2>
+    <pre id="salida"></pre>
+
+    <script>
+        function modificaPrimitivo( valor ) {
+            valor = 99;
+        }
+
+        function modificaArreglo( arr ) {
+            arr[ 0 ] = 99;
+        }
+
+        var numeros = [ 1, 2, 3 ];
+        var salida = document.getElementById( "salida" );
+
+        modificaPrimitivo( numeros[ 0 ] );
+        salida.textContent += "Después de pasar numeros[0] (primitivo): " + numeros + "\n";
+
+        modificaArreglo( numeros );
+        salida.textContent += "Después de pasar el arreglo completo: " + numeros + "\n";
+    </script>
+
+<!-- NAV-CAPITULOS -->
+<style>
+.nav-cap{background:#1f2937;margin:30px 0 0;padding:15px;display:flex;justify-content:flex-end;gap:15px;flex-wrap:wrap;font-family:Arial,sans-serif;line-height:normal}
+.nav-cap a{background:#2563eb;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-size:16px}
+.nav-cap a:hover{background:#1d4ed8}
+</style>
+<div class="nav-cap">
+<a href="../../index.html">⌂ Inicio</a>
+<a href="../menu.html">↑ Capítulo</a>
+<a href="index.html">← Volver a ejercicios</a>
+</div>
+<!-- /NAV-CAPITULOS -->
+</body>
+</html>

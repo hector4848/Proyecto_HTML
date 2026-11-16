@@ -1,0 +1,6 @@
+body  { font-family: "Times New Roman", serif; margin: 10px; }
+h2    { font-size: 1.4em; margin: 18px 0 14px; }
+table { width: 300px; border-collapse: collapse; border: 1px solid #222; }
+th    { background-color: #1a1a1a; color: white; text-align: left;
+        padding: 3px 4px; border: 1px solid #222; }
+td    { background-color: #d9d9d9; padding: 3px 4px; border: 1px solid #222; }
